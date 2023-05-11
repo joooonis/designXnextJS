@@ -601,7 +601,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"animejs@npm:^3.2.1":
+"animejs@npm:^3.2.1, animejs@npm:^3.2.x":
   version: 3.2.1
   resolution: "animejs@npm:3.2.1"
   checksum: 6939171bed17d6b28307747e564d33e93312c26169b98498c833117d86f174ce7a318469bfd81716c223860a6d13bd76b761e79e765b86b2a2f851963caaa851
@@ -2280,6 +2280,7 @@ __metadata:
     postcss: ^8.4.18
     prettier: ^2.7.1
     react: 18.2.0
+    react-anime: ^4.1.1
     react-dom: 18.2.0
     react-hook-form: ^7.38.0
     react-query: ^3.39.2
@@ -3181,6 +3182,18 @@ __metadata:
   version: 5.1.1
   resolution: "quick-lru@npm:5.1.1"
   checksum: a516faa25574be7947969883e6068dbe4aa19e8ef8e8e0fd96cddd6d36485e9106d85c0041a27153286b0770b381328f4072aa40d3b18a19f5f7d2b78b94b5ed
+  languageName: node
+  linkType: hard
+
+"react-anime@npm:^4.1.1":
+  version: 4.1.1
+  resolution: "react-anime@npm:4.1.1"
+  dependencies:
+    animejs: ^3.2.x
+  peerDependencies:
+    react: ^17.x
+    react-dom: ^17.x
+  checksum: 833ee57b83bc55e35a859257818503a51f3102e624f5ef6e8d2ceead077c3c0b5e50e82a5a3da47c4f0a4ddc246b5c213becf06f25baa0a7531f4cc3526fbd02
   languageName: node
   linkType: hard
 

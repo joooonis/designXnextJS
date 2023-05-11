@@ -1,10 +1,100 @@
 import Layout from '@components/common/layout';
+import anime from 'animejs';
 import Image from 'next/image';
+import { useEffect } from 'react';
 
 export default function Home() {
+  useEffect(() => {
+    const textWrapper = document.querySelector('.title');
+    if (!textWrapper) return;
+    textWrapper.innerHTML = textWrapper?.textContent!.replace(
+      /\S/g,
+      "<span class='letter'>$&</span>",
+    );
+    anime
+      .timeline({ loop: false })
+      .add({
+        targets: '.title .letter',
+        opacity: [0, 1],
+        easing: 'easeInOutQuad',
+        duration: 1000,
+        delay: (el, i) => 50 * (i + 1),
+      })
+      .add({
+        targets: '.reveal',
+        opacity: [0, 1],
+        easing: 'easeInOutQuad',
+        duration: 1000,
+      });
+    // leaf animation
+    anime({
+      targets: '.leaf-1',
+      rotate: [
+        { value: '10deg', duration: 2000 },
+        { value: '5deg', duration: 2000 },
+        { value: '0deg', duration: 2000 },
+      ],
+      loop: true,
+      easing: 'easeInOutSine',
+    });
+    anime({
+      targets: '.leaf-2',
+      rotate: [
+        { value: '5deg', duration: 1000 },
+        { value: '0deg', duration: 1000 },
+      ],
+      loop: true,
+      easing: 'easeInOutSine',
+    });
+    anime({
+      targets: '.leaf-3',
+      rotate: [
+        { value: '-10deg', duration: 2000 },
+        { value: '0deg', duration: 2000 },
+      ],
+      loop: true,
+      easing: 'easeInOutSine',
+    });
+
+    anime({
+      targets: '.fin-1',
+      rotate: [
+        { value: '-5deg', duration: 2000 },
+        { value: '0deg', duration: 2000 },
+        { value: '5deg', duration: 2000 },
+        { value: '0deg', duration: 2000 },
+      ],
+      loop: true,
+      easing: 'easeInOutSine',
+    });
+
+    anime({
+      targets: '.fin-2',
+      skewX: [
+        { value: '-5deg', duration: 2000 },
+        { value: '0deg', duration: 2000 },
+        { value: '5deg', duration: 2000 },
+        { value: '0deg', duration: 2000 },
+      ],
+      loop: true,
+      easing: 'easeInOutSine',
+    });
+
+    anime({
+      targets: '.fin-3',
+      skewX: [
+        { value: '7deg', duration: 2000 },
+        { value: '0deg', duration: 2000 },
+        { value: '-7deg', duration: 2000 },
+        { value: '0deg', duration: 2000 },
+      ],
+      loop: true,
+      easing: 'easeInOutSine',
+    });
+  }, []);
   return (
     <Layout>
-      <div className="relative overflow-hidden bg-gradient-to-b from-[rgba(255,244,228,1)] to-[rgba(240,246,238,1)] from-7% to-70% flex-col justify-center items-center h-[calc(100vh-2.5rem)] m-5">
+      <div className="relative overflow-hidden bg-gradient-to-b w-full from-[rgba(255,244,228,1)] to-[rgba(240,246,238,1)] from-7% to-70% flex-col justify-center items-center h-[calc(100vh-2.5rem)] m-5">
         <div className="w-full absolute top-44 text-[#403227] title text-xl my-auto font-medium text-center">
           The story of a liite dugeong, MIRAE
         </div>
@@ -60,8 +150,8 @@ export default function Home() {
           <Image
             className="hover:opacity-90 cursor-pointer -translate-y-16"
             src="/svg/enter-button.svg"
-            width={120}
-            height={120}
+            width={200}
+            height={200}
             alt="enter-button"
           />
         </div>
