@@ -11,7 +11,7 @@ export default function Layout({ children }: LayoutProps) {
       animate={{ opacity: 1 }}
       transition={{ ease: 'easeOut', duration: 2 }}
     >
-      <div className="w-full bg-[#ebebeb] font-Balsamiq h-full flex justify-center items-center">
+      <div className="w-full relative overflow-hidden bg-[#ebebeb] font-Balsamiq h-full flex justify-center items-center">
         {children}
       </div>
     </motion.div>

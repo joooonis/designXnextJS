@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import anime from 'animejs';
 import Chat from '@components/chat/chat';
+import Mirae from '@components/mirae/mirae';
 export default function Scene01() {
   const [chatOne, setChatOne] = useState(false);
   const [chatTwo, setChatTwo] = useState(false);
@@ -36,7 +37,7 @@ export default function Scene01() {
   return (
     <Layout>
       <div className="relative overflow-hidden bg-gradient-to-b w-full from-[rgba(255,244,228,1)] to-[rgba(240,246,238,1)] from-7% to-70% flex-col justify-center items-center h-[calc(100vh-2.5rem)] m-5">
-        <div className="absolute -bottom-8 origin-bottom right-12">
+        <div className="absolute -bottom-20 origin-bottom right-0">
           <Image
             className="grass-1"
             src="/background/grass/01.png"
@@ -45,7 +46,7 @@ export default function Scene01() {
             alt="grass-1"
           />
         </div>
-        <div className="absolute -bottom-8 origin-bottom left-12">
+        <div className="absolute -bottom-20 origin-bottom -left-2">
           <Image
             className="grass-2"
             src="/background/grass/02.png"
@@ -55,13 +56,17 @@ export default function Scene01() {
           />
         </div>
         <div className="chat-box mx-24 my-12 space-y-6">
-          {chatOne && <Chat isRight message="여긴 어디지..?" />}
+          {chatOne && <Chat message="여긴 어디지..?" />}
           {chatTwo && (
             <Chat
+              isRight
               isLoading
               message="안녕 나는 미래라고해! 나의 이야기를 들어줄래?"
             />
           )}
+        </div>
+        <div className="absolute w-full -right-20 top-20">
+          <Mirae />
         </div>
       </div>
     </Layout>

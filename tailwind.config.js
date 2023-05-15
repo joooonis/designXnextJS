@@ -10,6 +10,9 @@ module.exports = {
         Balsamiq: ['Balsamiq Sans', 'rsive'], // 영문 폰트
         PoorStory: ['Poor Story', 'cursive'], // 한글 폰트
       },
+      scale: {
+        '-100': '-1',
+      },
       animation: {
         bounce1: 'bounce 2s ease-in-out infinite ',
         bounce2: 'bounce 2s 0.5s ease-in-out infinite ',
