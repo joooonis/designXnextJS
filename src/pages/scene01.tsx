@@ -1,12 +1,12 @@
 import Layout from '@components/common/layout';
 import Image from 'next/image';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import anime from 'animejs';
 import Chat from '@components/chat/chat';
 export default function Scene01() {
+  const [chatOne, setChatOne] = useState(false);
+  const [chatTwo, setChatTwo] = useState(false);
   useEffect(() => {
-    //animation on classname grass-1 when load
-    // fade in duraiton 2s
     anime({
       targets: '.grass-1',
       opacity: [0, 1],
@@ -17,10 +17,20 @@ export default function Scene01() {
       targets: '.grass-2',
       opacity: [0, 1],
       easing: 'easeInOutQuad',
-      delay: 1000,
+      delay: 500,
       duration: 3000,
     });
+    setTimeout(() => {
+      setChatOne(true);
+    }, 3000);
   }, []);
+
+  useEffect(() => {
+    if (!chatOne) return;
+    setTimeout(() => {
+      setChatTwo(true);
+    }, 6000);
+  }, [chatOne]);
 
   return (
     <Layout>
@@ -43,7 +53,15 @@ export default function Scene01() {
             alt="grass-1"
           />
         </div>
-        <Chat />
+        <div className="chat-box mx-24 my-12 space-y-6">
+          {chatOne && <Chat isRight message="여긴 어디지..?" />}
+          {chatTwo && (
+            <Chat
+              isLoading
+              message="안녕 나는 미래라고해! 나의 이야기를 들어줄래?"
+            />
+          )}
+        </div>
       </div>
     </Layout>
   );

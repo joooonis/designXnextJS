@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       fontFamily: {
         Balsamiq: ['Balsamiq Sans', 'rsive'], // 영문 폰트
+        PoorStory: ['Poor Story', 'cursive'], // 한글 폰트
       },
       animation: {
         bounce1: 'bounce 2s ease-in-out infinite ',
