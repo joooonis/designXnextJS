@@ -11,13 +11,14 @@ export default function Scene01() {
       targets: '.grass-1',
       opacity: [0, 1],
       easing: 'easeInOutQuad',
+      delay: 300,
       duration: 3000,
     });
     anime({
       targets: '.grass-2',
       opacity: [0, 1],
       easing: 'easeInOutQuad',
-      delay: 500,
+      delay: 600,
       duration: 3000,
     });
     setTimeout(() => {
