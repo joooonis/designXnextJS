@@ -2,8 +2,11 @@ import Layout from '@components/common/layout';
 import anime from 'animejs';
 import Image from 'next/image';
 import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 
 export default function Home() {
+  const router = useRouter();
+
   useEffect(() => {
     const textWrapper = document.querySelector('.title');
     if (!textWrapper) return;
@@ -92,13 +95,13 @@ export default function Home() {
       easing: 'easeInOutSine',
     });
   }, []);
+
   return (
     <Layout>
       <div className="relative overflow-hidden bg-gradient-to-b w-full from-[rgba(255,244,228,1)] to-[rgba(240,246,238,1)] from-7% to-70% flex-col justify-center items-center h-[calc(100vh-2.5rem)] m-5">
         <div className="w-full absolute top-44 text-[#403227] title text-xl my-auto font-medium text-center">
           The story of a liite dugeong, MIRAE
         </div>
-
         <div className="absolute bottom-0 origin-bottom left-16">
           <Image
             className="leaf-1"
@@ -146,7 +149,10 @@ export default function Home() {
             alt="fin-3"
           />
         </div>
-        <div className="reveal translate-y-[28rem] z-10 opacity-0 items-center flex-col absolute top-1/4 w-full flex justify-center trnaslate-y-1/2">
+        <div
+          onClick={() => router.push('/scene01')}
+          className="reveal translate-y-[28rem] z-10 opacity-0 items-center flex-col absolute top-1/4 w-full flex justify-center trnaslate-y-1/2"
+        >
           <Image
             className="hover:opacity-90 cursor-pointer -translate-y-16"
             src="/svg/enter-button.svg"
@@ -165,7 +171,6 @@ export default function Home() {
         </div>
         <div className="relative" id="snow"></div>
       </div>
-      `
     </Layout>
   );
 }
