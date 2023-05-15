@@ -27,7 +27,7 @@ export default function Mirae() {
   }, []);
 
   return (
-    <div className="mirae transform -scale-x-100 ">
+    <div className="mirae">
       <div className="mx-auto z-99 w-full z-10 items-center relative justify-center">
         <Image
           className="absolute "

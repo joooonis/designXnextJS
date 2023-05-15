@@ -66,7 +66,7 @@ export default function Scene01() {
           )}
         </div>
         <div className="absolute w-full -right-20 top-20">
-          <Mirae />
+          {/* <Mirae /> */}
         </div>
       </div>
     </Layout>
