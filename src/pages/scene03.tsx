@@ -32,25 +32,7 @@ export default function Scene() {
 
   return (
     <Layout>
-      <div className="relative overflow-hidden bg-gradient-to-b w-full from-[rgba(255,244,228,1)] to-[rgba(240,246,238,1)] from-7% to-70% flex-col justify-center items-center h-[calc(100vh-2.5rem)] m-5">
-        <div className="absolute -bottom-20 origin-bottom right-0">
-          <Image
-            className="grass-1"
-            src="/background/grass/01.png"
-            width={500}
-            height={500}
-            alt="grass-1"
-          />
-        </div>
-        <div className="absolute -bottom-20 origin-bottom -left-2">
-          <Image
-            className="grass-2"
-            src="/background/grass/02.png"
-            width={500}
-            height={500}
-            alt="grass-1"
-          />
-        </div>
+      <div className="relative overflow-hidden bg-gradient-to-b w-full from-[#D3CCE3] to-[#F6F3FA]  flex-col justify-center items-center h-[calc(100vh-2.5rem)] m-5">
         <div className="chat-box mx-24 my-12 space-y-6">
           <Chats
             chats={[
@@ -73,7 +55,7 @@ export default function Scene() {
                 message: '...내가 무언가 할 수 있는게 없을까?',
               },
             ]}
-            durations={[3, 8, 10, 12]}
+            durations={[3, 8, 11, 14]}
           />
         </div>
         <div className="absolute w-full -right-20 top-20">
