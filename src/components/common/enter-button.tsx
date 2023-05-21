@@ -1,4 +1,6 @@
+import anime from 'animejs';
 import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 interface ButtonProps {
   nextPage: string;
@@ -8,6 +10,16 @@ interface ButtonProps {
 
 export default function Button({ nextPage, text, className }: ButtonProps) {
   const router = useRouter();
+
+  useEffect(() => {
+    anime({
+      targets: '.reveal',
+      opacity: [0, 1],
+      easing: 'easeInOutQuad',
+      duration: 1000,
+    });
+  }, []);
+
   return (
     <div
       onClick={() => router.push(`${nextPage}`)}

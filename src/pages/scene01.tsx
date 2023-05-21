@@ -3,9 +3,13 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import anime from 'animejs';
 import Chat from '@components/chat/chat';
+import Button from '@components/common/enter-button';
 export default function Scene01() {
   const [chatOne, setChatOne] = useState(false);
   const [chatTwo, setChatTwo] = useState(false);
+  const [chatThree, setChatThree] = useState(false);
+  const [buttonRender, setButtonRender] = useState(false);
+
   useEffect(() => {
     anime({
       targets: '.grass-1',
@@ -31,7 +35,17 @@ export default function Scene01() {
     setTimeout(() => {
       setChatTwo(true);
     }, 6000);
-  }, [chatOne]);
+
+    if (!chatTwo) return;
+    setTimeout(() => {
+      setChatThree(true);
+    }, 3000);
+
+    if (!chatThree) return;
+    setTimeout(() => {
+      setButtonRender(true);
+    }, 3000);
+  }, [chatOne, chatTwo, chatThree]);
 
   return (
     <Layout>
@@ -55,18 +69,21 @@ export default function Scene01() {
           />
         </div>
         <div className="chat-box mx-24 my-12 space-y-6">
-          {chatOne && <Chat message="여긴 어디지..?" />}
+          {chatOne && <Chat isLoading message="여긴 어디지..?" />}
           {chatTwo && (
             <Chat
               isRight
-              isLoading
               message="안녕 나는 미래라고해! 나의 이야기를 들어줄래?"
             />
           )}
+          {chatThree && <Chat message="좋아!" />}
         </div>
         <div className="absolute w-full -right-20 top-20">
           {/* <Mirae /> */}
         </div>
+        {buttonRender && (
+          <Button nextPage="/scene02" text="N E X T" className="bottom-1/3" />
+        )}
       </div>
     </Layout>
   );

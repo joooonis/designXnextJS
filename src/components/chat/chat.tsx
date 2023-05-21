@@ -12,13 +12,13 @@ export default function Chat({
   message,
   isLoading = false,
 }: ChatProps) {
-  const [isChatLoad, setIsChatLoad] = useState(isLoading);
+  const [startChat, setStartChat] = useState(!isLoading);
   useEffect(() => {
-    if (isChatLoad) return;
+    if (startChat) return;
     setTimeout(() => {
-      setIsChatLoad(true);
+      setStartChat(true);
     }, 5000);
-  }, [isChatLoad]);
+  }, [startChat]);
 
   return (
     <motion.div
@@ -36,7 +36,7 @@ export default function Chat({
         ></motion.div>
       )}
       <div className="rounded-full text-slate-600  w-fit flex justify-center items-center px-8 py-2 bg-gray-50 h-16">
-        {isChatLoad ? (
+        {startChat ? (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
