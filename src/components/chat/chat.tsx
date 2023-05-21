@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Wait from './wait';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 interface ChatProps {
   duration?: number;
   isRight?: boolean;
@@ -34,8 +35,15 @@ export default function Chat({
       {!isRight && (
         <motion.div
           whileHover={{ scale: 1.1 }}
-          className="rounded-full bg-gray-50 w-16 h-16"
-        ></motion.div>
+          className="rounded-full bg-gray-50 w-16 h-16 relative overflow-hidden"
+        >
+          <Image
+            src="/girl/girl.png"
+            alt="girl"
+            fill
+            className="object-contain scale-[2.6] translate-y-12"
+          />
+        </motion.div>
       )}
       <div className="rounded-full text-slate-600  w-fit flex justify-center items-center px-8 py-2 bg-gray-50 h-16">
         {startChat ? (
@@ -54,8 +62,15 @@ export default function Chat({
       {isRight && (
         <motion.div
           whileHover={{ scale: 1.1 }}
-          className="rounded-full bg-gray-50 w-16 h-16"
-        ></motion.div>
+          className="rounded-full bg-gray-50 w-16 h-16 relative overflow-hidden"
+        >
+          <Image
+            src="/mirae/mirae.png"
+            alt="mirae"
+            fill
+            className="object-contain scale-[1.6] translate-x-2 translate-y-4"
+          />
+        </motion.div>
       )}
     </motion.div>
   );

@@ -2,7 +2,7 @@ import Layout from '@components/common/layout';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import anime from 'animejs';
-import Button from '@components/common/enter-button';
+import Button from '@components/common/button';
 import Chats from '@components/chat/chats';
 export default function Scene01() {
   const [buttonRender, setButtonRender] = useState(false);
@@ -27,7 +27,7 @@ export default function Scene01() {
   useEffect(() => {
     setTimeout(() => {
       setButtonRender(true);
-    }, 13000);
+    }, 11000);
   }, []);
 
   return (
@@ -68,14 +68,18 @@ export default function Scene01() {
                 message: '좋아!',
               },
             ]}
-            durations={[5, 10, 12]}
+            durations={[3, 8, 10]}
           />
         </div>
         <div className="absolute w-full -right-20 top-20">
           {/* <Mirae /> */}
         </div>
         {buttonRender && (
-          <Button nextPage="/scene02" text="N E X T" className="bottom-1/3" />
+          <Button
+            nextPage="/scene02"
+            text="N E X T"
+            className="bottom-[160px]"
+          />
         )}
       </div>
     </Layout>

@@ -2,7 +2,7 @@ import Layout from '@components/common/layout';
 import anime from 'animejs';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import Button from '@components/common/enter-button';
+import Button from '@components/common/button';
 
 export default function Home() {
   const [buttonRender, setButtonRender] = useState(false);
