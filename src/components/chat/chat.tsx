@@ -2,12 +2,14 @@ import { useEffect, useState } from 'react';
 import Wait from './wait';
 import { motion } from 'framer-motion';
 interface ChatProps {
+  duration?: number;
   isRight?: boolean;
   message?: string;
   isLoading?: boolean;
 }
 
 export default function Chat({
+  duration = 0,
   isRight = false,
   message,
   isLoading = false,
@@ -17,15 +19,15 @@ export default function Chat({
     if (startChat) return;
     setTimeout(() => {
       setStartChat(true);
-    }, 5000);
-  }, [startChat]);
+    }, duration * 1000 + 3000);
+  }, [startChat, duration]);
 
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ ease: 'easeOut', duration: 2 }}
-      className={`w-full flex space-x-4 ${
+      transition={{ ease: 'easeOut', delay: duration }}
+      className={`w-full flex space-x-4  ${
         isRight ? 'justify-end' : 'justify-start'
       }`}
     >

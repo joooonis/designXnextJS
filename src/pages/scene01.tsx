@@ -2,12 +2,9 @@ import Layout from '@components/common/layout';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import anime from 'animejs';
-import Chat from '@components/chat/chat';
 import Button from '@components/common/enter-button';
+import Chats from '@components/chat/chats';
 export default function Scene01() {
-  const [chatOne, setChatOne] = useState(false);
-  const [chatTwo, setChatTwo] = useState(false);
-  const [chatThree, setChatThree] = useState(false);
   const [buttonRender, setButtonRender] = useState(false);
 
   useEffect(() => {
@@ -25,27 +22,13 @@ export default function Scene01() {
       delay: 600,
       duration: 3000,
     });
-    setTimeout(() => {
-      setChatOne(true);
-    }, 3000);
   }, []);
 
   useEffect(() => {
-    if (!chatOne) return;
-    setTimeout(() => {
-      setChatTwo(true);
-    }, 6000);
-
-    if (!chatTwo) return;
-    setTimeout(() => {
-      setChatThree(true);
-    }, 3000);
-
-    if (!chatThree) return;
     setTimeout(() => {
       setButtonRender(true);
-    }, 3000);
-  }, [chatOne, chatTwo, chatThree]);
+    }, 13000);
+  }, []);
 
   return (
     <Layout>
@@ -69,14 +52,24 @@ export default function Scene01() {
           />
         </div>
         <div className="chat-box mx-24 my-12 space-y-6">
-          {chatOne && <Chat isLoading message="여긴 어디지..?" />}
-          {chatTwo && (
-            <Chat
-              isRight
-              message="안녕 나는 미래라고해! 나의 이야기를 들어줄래?"
-            />
-          )}
-          {chatThree && <Chat message="좋아!" />}
+          <Chats
+            chats={[
+              {
+                isRight: false,
+                isLoading: true,
+                message: '여긴 어디지..?',
+              },
+              {
+                isRight: true,
+                message: '안녕 나는 미래라고해! 나의 이야기를 들어줄래?',
+              },
+              {
+                isRight: false,
+                message: '좋아!',
+              },
+            ]}
+            durations={[5, 10, 12]}
+          />
         </div>
         <div className="absolute w-full -right-20 top-20">
           {/* <Mirae /> */}
