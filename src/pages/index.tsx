@@ -1,12 +1,11 @@
 import Layout from '@components/common/layout';
 import anime from 'animejs';
 import Image from 'next/image';
-import { useEffect } from 'react';
-import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 import Button from '@components/common/enter-button';
 
 export default function Home() {
-  const router = useRouter();
+  const [buttonRender, setButtonRender] = useState(false);
 
   useEffect(() => {
     const textWrapper = document.querySelector('.title');
@@ -29,7 +28,12 @@ export default function Home() {
         opacity: [0, 1],
         easing: 'easeInOutQuad',
         duration: 1000,
+        complete: () => {
+          // complete callback
+          setButtonRender(true);
+        },
       });
+
     // leaf animation
     anime({
       targets: '.leaf-1',
@@ -150,7 +154,11 @@ export default function Home() {
             alt="fin-3"
           />
         </div>
-        <Button nextPage="/scene01" text="E N T E R" className="bottom-1/4" />
+
+        {buttonRender && (
+          <Button nextPage="/scene01" text="E N T E R" className="bottom-1/4" />
+        )}
+
         <div className="absolute bottom-0 origin-bottom right-24 leaf-3">
           <Image
             src="/svg/leaf-green-3.svg"
