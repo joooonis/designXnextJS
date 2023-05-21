@@ -27,7 +27,7 @@ export default function Scene() {
   useEffect(() => {
     setTimeout(() => {
       setButtonRender(true);
-    }, 11000);
+    }, 16000);
   }, []);
 
   return (
@@ -55,31 +55,30 @@ export default function Scene() {
           <Chats
             chats={[
               {
-                isRight: false,
+                isRight: true,
                 isLoading: true,
-                message: '여긴 어디지..?',
+                message: '하지만 나는 포기하지 않아..',
               },
               {
                 isRight: true,
-                message: '안녕 나는 미래라고해! 나의 이야기를 들어줄래?',
+                isLoading: true,
+                message:
+                  '이 넓은 바다 어디엔가 나를 기다리는 곳이 있을거야 같이 가주겠어?',
               },
               {
                 isRight: false,
-                message: '좋아!',
+                isLoading: true,
+                message: '물론이지! 함께라면 분명 괜찮을거야',
               },
             ]}
-            durations={[3, 8, 10]}
+            durations={[3, 8, 12]}
           />
         </div>
         <div className="absolute w-full -right-20 top-20">
           {/* <Mirae /> */}
         </div>
         {buttonRender && (
-          <Button
-            nextPage="/scene02"
-            text="N E X T"
-            className="bottom-[160px]"
-          />
+          <Button nextPage="/scene04" text="E N D" className="bottom-[160px]" />
         )}
       </div>
     </Layout>

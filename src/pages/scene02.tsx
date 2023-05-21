@@ -27,7 +27,7 @@ export default function Scene() {
   useEffect(() => {
     setTimeout(() => {
       setButtonRender(true);
-    }, 11000);
+    }, 14000);
   }, []);
 
   return (
@@ -57,18 +57,24 @@ export default function Scene() {
               {
                 isRight: false,
                 isLoading: true,
-                message: '여긴 어디지..?',
+                message: '저 어린 아이가 너니?',
               },
               {
                 isRight: true,
-                message: '안녕 나는 미래라고해! 나의 이야기를 들어줄래?',
+                isLoading: true,
+                message:
+                  '맞아 저때는 좋았지.. 친구들과 함께 바다를 마음껏 헤엄치고는 했어 하지만..',
               },
               {
                 isRight: false,
-                message: '좋아!',
+                message: '무슨일이 일어난거야?',
+              },
+              {
+                isRight: true,
+                message: '나를 따라와줘',
               },
             ]}
-            durations={[3, 8, 10]}
+            durations={[3, 8, 13, 15]}
           />
         </div>
         <div className="absolute w-full -right-20 top-20">
@@ -76,7 +82,7 @@ export default function Scene() {
         </div>
         {buttonRender && (
           <Button
-            nextPage="/scene02"
+            nextPage="/scene03"
             text="N E X T"
             className="bottom-[160px]"
           />

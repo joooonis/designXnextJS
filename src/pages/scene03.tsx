@@ -27,7 +27,7 @@ export default function Scene() {
   useEffect(() => {
     setTimeout(() => {
       setButtonRender(true);
-    }, 11000);
+    }, 16000);
   }, []);
 
   return (
@@ -55,20 +55,25 @@ export default function Scene() {
           <Chats
             chats={[
               {
-                isRight: false,
+                isRight: true,
                 isLoading: true,
-                message: '여긴 어디지..?',
+                message:
+                  '시간이 흐르고 친구들과 가족들은 점점 내 곁을 떠나갔어.',
+              },
+              {
+                isRight: false,
+                message: '이럴수가 왜 그런거야?',
               },
               {
                 isRight: true,
-                message: '안녕 나는 미래라고해! 나의 이야기를 들어줄래?',
+                message: '환경이 파괴되고 먹이를 점점 구할 수가 없게 되었거든',
               },
               {
                 isRight: false,
-                message: '좋아!',
+                message: '...내가 무언가 할 수 있는게 없을까?',
               },
             ]}
-            durations={[3, 8, 10]}
+            durations={[3, 8, 10, 12]}
           />
         </div>
         <div className="absolute w-full -right-20 top-20">
@@ -76,7 +81,7 @@ export default function Scene() {
         </div>
         {buttonRender && (
           <Button
-            nextPage="/scene02"
+            nextPage="/scene04"
             text="N E X T"
             className="bottom-[160px]"
           />
