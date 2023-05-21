@@ -3,7 +3,6 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import anime from 'animejs';
 import Chat from '@components/chat/chat';
-import Mirae from '@components/mirae/mirae';
 export default function Scene01() {
   const [chatOne, setChatOne] = useState(false);
   const [chatTwo, setChatTwo] = useState(false);

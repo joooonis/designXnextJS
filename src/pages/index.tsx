@@ -3,6 +3,7 @@ import anime from 'animejs';
 import Image from 'next/image';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
+import Button from '@components/common/enter-button';
 
 export default function Home() {
   const router = useRouter();
@@ -149,18 +150,7 @@ export default function Home() {
             alt="fin-3"
           />
         </div>
-        <div
-          onClick={() => router.push('/scene01')}
-          className="reveal translate-y-[28rem] z-10 opacity-0 items-center flex-col absolute top-1/4 w-full flex justify-center trnaslate-y-1/2"
-        >
-          <Image
-            className="hover:opacity-90 cursor-pointer -translate-y-16"
-            src="/svg/enter-button.svg"
-            width={200}
-            height={200}
-            alt="enter-button"
-          />
-        </div>
+        <Button nextPage="/scene01" text="E N T E R" className="bottom-1/4" />
         <div className="absolute bottom-0 origin-bottom right-24 leaf-3">
           <Image
             src="/svg/leaf-green-3.svg"
