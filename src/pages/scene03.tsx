@@ -66,6 +66,7 @@ export default function Scene() {
             nextPage="/scene04"
             text="N E X T"
             className="bottom-[160px]"
+            color="purple"
           />
         )}
       </div>

@@ -36,7 +36,7 @@ export default function Scene() {
               },
               {
                 isRight: true,
-                message: '. . . 나를 따라와줘',
+                message: '. . . 나를 따라와줘!',
               },
             ]}
             durations={[3, 8, 13, 15]}
@@ -50,6 +50,7 @@ export default function Scene() {
             nextPage="/scene03"
             text="N E X T"
             className="bottom-[160px]"
+            color="blue"
           />
         )}
       </div>

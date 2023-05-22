@@ -60,7 +60,12 @@ export default function Scene() {
           {/* <Mirae /> */}
         </div>
         {buttonRender && (
-          <Button nextPage="/scene04" text="E N D" className="bottom-[160px]" />
+          <Button
+            nextPage="/scene04"
+            text="E N D"
+            className="bottom-[160px]"
+            color="lavender"
+          />
         )}
       </div>
     </Layout>
