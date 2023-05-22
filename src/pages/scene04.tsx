@@ -1,28 +1,22 @@
 import Layout from '@components/common/layout';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import anime from 'animejs';
 import Button from '@components/common/button';
 import Chats from '@components/chat/chats';
+import { motion } from 'framer-motion';
 export default function Scene() {
   const [buttonRender, setButtonRender] = useState(false);
 
-  useEffect(() => {
-    anime({
-      targets: '.grass-1',
-      opacity: [0, 1],
-      easing: 'easeInOutQuad',
-      delay: 300,
-      duration: 3000,
-    });
-    anime({
-      targets: '.grass-2',
-      opacity: [0, 1],
-      easing: 'easeInOutQuad',
-      delay: 600,
-      duration: 3000,
-    });
-  }, []);
+  const container = {
+    hover: {
+      rotateZ: [0, 1, 0, -1, 0],
+      x: [0, 5, 0, -5, 0],
+      transition: {
+        duration: 2,
+        yoyo: Infinity,
+      },
+    },
+  };
 
   useEffect(() => {
     setTimeout(() => {
@@ -33,6 +27,58 @@ export default function Scene() {
   return (
     <Layout>
       <div className="relative overflow-hidden bg-gradient-to-b w-full from-[#C9D6FF]  to-[#E2E2E2]  flex-col justify-center items-center h-[calc(100vh-2.5rem)] m-5">
+        <motion.div
+          whileHover="hover"
+          variants={container}
+          className="absolute bottom-60 left-40"
+          initial={{ x: 300, opacity: 0 }}
+          animate={{
+            x: 0,
+            opacity: 1,
+            transitionEnd: {
+              opacity: 0.1,
+            },
+          }}
+          transition={{
+            duration: 5,
+            ease: 'easeOut',
+          }}
+        >
+          <Image
+            className="girl"
+            src="/scene04/girl.png"
+            width={300}
+            height={300}
+            alt="grass-1"
+          />
+        </motion.div>
+        <motion.div
+          whileHover="hover"
+          variants={container}
+          className="absolute bottom-80 right-40"
+          initial={{ x: 100, rotateZ: 0, opacity: 0 }}
+          animate={{
+            x: 0,
+            rotateZ: [0, -20, 0, -20, 0, -20, 0],
+            opacity: 1,
+            transitionEnd: {
+              opacity: 0.1,
+            },
+          }}
+          transition={{
+            delay: 1,
+            duration: 4,
+            ease: 'easeOut',
+          }}
+        >
+          <Image
+            className="mirae"
+            src="/scene04/mirae.png"
+            width={250}
+            height={250}
+            alt="mirae"
+          />
+        </motion.div>
         <div className="chat-box mx-24 my-12 space-y-6">
           <Chats
             chats={[
@@ -53,11 +99,8 @@ export default function Scene() {
                 message: '물론이지! 함께라면 분명 괜찮을거야',
               },
             ]}
-            durations={[3, 8, 12]}
+            durations={[6, 11, 15]}
           />
-        </div>
-        <div className="absolute w-full -right-20 top-20">
-          {/* <Mirae /> */}
         </div>
         {buttonRender && (
           <Button

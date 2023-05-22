@@ -27,7 +27,7 @@ export default function Scene() {
   useEffect(() => {
     setTimeout(() => {
       setButtonRender(true);
-    }, 16000);
+    }, 17000);
   }, []);
 
   return (
@@ -48,6 +48,7 @@ export default function Scene() {
               },
               {
                 isRight: true,
+                isLoading: true,
                 message: '환경이 파괴되고 먹이를 점점 구할 수가 없게 되었거든',
               },
               {
@@ -55,7 +56,7 @@ export default function Scene() {
                 message: '...내가 무언가 할 수 있는게 없을까?',
               },
             ]}
-            durations={[3, 8, 11, 14]}
+            durations={[3, 8, 11, 16]}
           />
         </div>
         <div className="absolute w-full -right-20 top-20">
