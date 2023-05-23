@@ -105,7 +105,7 @@ export default function Home() {
     <Layout>
       <div className="relative overflow-hidden bg-gradient-to-b w-full from-[rgba(255,244,228,1)] to-[rgba(240,246,238,1)] from-7% to-70% flex-col justify-center items-center h-[calc(100vh-2.5rem)] m-5">
         <div className="w-full absolute top-44 text-[#403227] title text-xl my-auto font-medium text-center">
-          The story of a liite dugeong, MIRAE
+          The story of a little dugeong, MIRAE
         </div>
         <div className="absolute bottom-0 origin-bottom left-16">
           <Image

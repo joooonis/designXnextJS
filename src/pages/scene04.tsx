@@ -28,21 +28,12 @@ export default function Scene() {
     <Layout>
       <div className="relative overflow-hidden bg-gradient-to-b w-full from-[#C9D6FF]  to-[#E2E2E2]  flex-col justify-center items-center h-[calc(100vh-2.5rem)] m-5">
         <motion.div
-          whileHover="hover"
-          variants={container}
+          // whileHover="hover"
+          // variants={container}
           className="absolute bottom-60 left-40"
-          initial={{ x: 300, opacity: 0 }}
-          animate={{
-            x: 0,
-            opacity: 1,
-            transitionEnd: {
-              opacity: 0.1,
-            },
-          }}
-          transition={{
-            duration: 5,
-            ease: 'easeOut',
-          }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: [0, 1, 0.1] }}
+          transition={{ duration: 5 }}
         >
           <Image
             className="girl"
@@ -53,21 +44,13 @@ export default function Scene() {
           />
         </motion.div>
         <motion.div
-          whileHover="hover"
-          variants={container}
+          // whileHover="hover"
+          // variants={container}
           className="absolute bottom-80 right-40"
-          initial={{ x: 100, rotateZ: 0, opacity: 0 }}
-          animate={{
-            x: 0,
-            rotateZ: [0, -20, 0, -20, 0, -20, 0],
-            opacity: 1,
-            transitionEnd: {
-              opacity: 0.1,
-            },
-          }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: [0, 1, 0.1] }}
           transition={{
-            delay: 1,
-            duration: 4,
+            duration: 5,
             ease: 'easeOut',
           }}
         >
@@ -104,7 +87,7 @@ export default function Scene() {
         </div>
         {buttonRender && (
           <Button
-            nextPage="/scene04"
+            nextPage="/stage"
             text="E N D"
             className="bottom-[160px]"
             color="lavender"
