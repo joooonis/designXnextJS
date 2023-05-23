@@ -3,16 +3,21 @@ import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 
-interface ButtonProps {
+interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   nextPage?: string;
   message: string;
   color?: 'green' | 'blue' | 'purple' | 'lavender';
   className?: string;
+  onClick?: () => void;
 }
 
-export default function Button({ nextPage, message, className }: ButtonProps) {
+export default function Button({
+  nextPage,
+  message,
+  className,
+  onClick,
+}: ButtonProps) {
   const router = useRouter();
-
   useEffect(() => {
     anime({
       targets: '.button',
@@ -22,9 +27,14 @@ export default function Button({ nextPage, message, className }: ButtonProps) {
     });
   }, []);
 
+  const handleClick = () => {
+    if (onClick) onClick();
+    nextPage && router.push(`${nextPage}`);
+  };
+
   return (
-    <div
-      onClick={() => router.push(`${nextPage}`)}
+    <button
+      onClick={handleClick}
       className={`button z-10 opacity-0 items-center flex-col ${className} flex justify-center`}
     >
       <div className="flex cursor-pointer  text-sm h-16 w-48 bg-contain bg-no-repeat bg-center bg-[url('/svg/button-ver2.png')] text-white justify-center items-center">
@@ -37,6 +47,6 @@ export default function Button({ nextPage, message, className }: ButtonProps) {
           {message}
         </motion.div>
       </div>
-    </div>
+    </button>
   );
 }

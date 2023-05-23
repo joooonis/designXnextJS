@@ -45,7 +45,7 @@ export default function Stage() {
           onHoverEnd={handleHoverEnd}
           className="absolute bottom-60 left-40 cursor-pointer flex flex-col items-center"
           onClick={() => {
-            router.push('/mission');
+            router.push('/mission01');
           }}
         >
           <motion.div whileHover="hover" variants={container}>
