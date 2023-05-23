@@ -1,14 +1,10 @@
 import Layout from '@components/common/layout-ver2';
-import anime from 'animejs';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
-import Button from '@components/common/button';
-import Chat from '@components/chat/chat';
+import { useState } from 'react';
 import { useRouter } from 'next/router';
 
 export default function Stage() {
-  const [buttonRender, setButtonRender] = useState(false);
   const [hovered, setHovered] = useState(false);
   const handleHover = () => {
     setHovered(true);

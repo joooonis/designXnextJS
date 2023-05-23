@@ -1,7 +1,6 @@
 import Layout from '@components/common/layout-ver2';
 import { motion } from 'framer-motion';
 import Button from '@components/common/button-ver2';
-import { useRouter } from 'next/router';
 import { useState } from 'react';
 
 export default function Stage() {
@@ -24,7 +23,7 @@ export default function Stage() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 2, easings: 'easeInOut' }}
+          transition={{ duration: 3, easings: 'easeInOut' }}
           className="w-full flex justify-center space-x-10 items-center"
         >
           <Button message="네" className="bottom-40" nextPage="/mission02" />
