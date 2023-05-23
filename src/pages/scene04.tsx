@@ -21,15 +21,13 @@ export default function Scene() {
   useEffect(() => {
     setTimeout(() => {
       setButtonRender(true);
-    }, 16000);
+    }, 19000);
   }, []);
 
   return (
     <Layout>
       <div className="relative overflow-hidden bg-gradient-to-b w-full from-[#C9D6FF]  to-[#E2E2E2]  flex-col justify-center items-center h-[calc(100vh-2.5rem)] m-5">
-        <motion.div
-          // whileHover="hover"
-          // variants={container}
+        {/* <motion.div
           className="absolute bottom-60 left-40"
           initial={{ opacity: 0 }}
           animate={{ opacity: [0, 1, 0.1] }}
@@ -44,8 +42,6 @@ export default function Scene() {
           />
         </motion.div>
         <motion.div
-          // whileHover="hover"
-          // variants={container}
           className="absolute bottom-80 right-40"
           initial={{ opacity: 0 }}
           animate={{ opacity: [0, 1, 0.1] }}
@@ -61,7 +57,7 @@ export default function Scene() {
             height={250}
             alt="mirae"
           />
-        </motion.div>
+        </motion.div> */}
         <div className="chat-box mx-24 my-12 space-y-6">
           <Chats
             chats={[
@@ -74,12 +70,12 @@ export default function Scene() {
                 isRight: true,
                 isLoading: true,
                 message:
-                  '이 넓은 바다 어디엔가 나를 기다리는 곳이 있을거야 같이 가주겠어?',
+                  '이 넓은 바다 어디엔가 분명 나를 기다리는 곳이 있을거야 같이 가주겠어?',
               },
               {
                 isRight: false,
                 isLoading: true,
-                message: '물론이지! 함께라면 분명 괜찮을거야',
+                message: '물론이지. 함께라면 분명 찾을 수 있어!',
               },
             ]}
             durations={[6, 11, 15]}

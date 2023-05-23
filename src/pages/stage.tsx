@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import Button from '@components/common/button';
 import Chat from '@components/chat/chat';
+import { useRouter } from 'next/router';
 
 export default function Stage() {
   const [buttonRender, setButtonRender] = useState(false);
@@ -16,6 +17,8 @@ export default function Stage() {
   const handleHoverEnd = () => {
     setHovered(false);
   };
+
+  const router = useRouter();
 
   const container = {
     hover: {
@@ -41,6 +44,9 @@ export default function Stage() {
           onHoverStart={handleHover}
           onHoverEnd={handleHoverEnd}
           className="absolute bottom-60 left-40 cursor-pointer flex flex-col items-center"
+          onClick={() => {
+            router.push('/mission');
+          }}
         >
           <motion.div whileHover="hover" variants={container}>
             <Image
@@ -56,7 +62,7 @@ export default function Stage() {
               opacity: hovered ? [1, 0.5, 1] : 1,
             }}
             transition={{ duration: 1, yoyo: Infinity }}
-            className="font-PoorStory text-xl"
+            className="font-PoorStory text-[18px]"
           >
             이번주에는 어떤 미션이 있을까?
           </motion.div>
@@ -68,6 +74,9 @@ export default function Stage() {
           onHoverStart={handleHover}
           onHoverEnd={handleHoverEnd}
           className="absolute bottom-80 cursor-pointer right-40 flex flex-col items-center"
+          onClick={() => {
+            router.push('/field');
+          }}
         >
           <motion.div whileHover="hover" variants={container}>
             <Image
@@ -81,12 +90,11 @@ export default function Stage() {
           <motion.div
             animate={{ opacity: hovered ? [1, 0.5, 1] : 1 }}
             transition={{ duration: 1, yoyo: Infinity }}
-            className="font-PoorStory text-xl"
+            className="font-PoorStory text-[18px]"
           >
             미래를 만나러 가요!
           </motion.div>
         </motion.div>
-        {/* <Button nextPage="/stage" text="E N T E R" className="bottom-1/4" /> */}
       </div>
     </Layout>
   );

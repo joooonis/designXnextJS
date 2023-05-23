@@ -40,7 +40,7 @@ export default function Scene() {
                 isRight: true,
                 isLoading: true,
                 message:
-                  '시간이 흐르고 친구들과 가족들은 점점 내 곁을 떠나갔어.',
+                  '시간이 흐르고 친구들과 가족들은 점점 내 곁을 떠나갔어',
               },
               {
                 isRight: false,

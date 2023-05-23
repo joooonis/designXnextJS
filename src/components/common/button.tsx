@@ -4,10 +4,10 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 
 interface ButtonProps {
-  nextPage: string;
+  nextPage?: string;
   text: string;
   color?: 'green' | 'blue' | 'purple' | 'lavender';
-  className: string;
+  className?: string;
 }
 
 export default function Button({
