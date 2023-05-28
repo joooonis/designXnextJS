@@ -2,7 +2,6 @@ import Chat from './chat';
 
 interface ChatProps {
   isLoading?: boolean;
-  isRight?: boolean;
   message: string;
 }
 
@@ -14,13 +13,12 @@ export default function Chats({
   durations: number[];
 }) {
   return (
-    <div className="chat-box mx-24 my-12 space-y-6">
+    <div className="chat-box mx-60 my-12 space-y-8">
       {chats.map((chat, index) => (
         <Chat
           duration={durations[index]}
           key={index}
           isLoading={chat.isLoading}
-          isRight={chat.isRight}
           message={chat.message}
         />
       ))}

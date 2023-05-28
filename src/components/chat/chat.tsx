@@ -4,14 +4,12 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 interface ChatProps {
   duration?: number;
-  isRight?: boolean;
   message?: string;
   isLoading?: boolean;
 }
 
 export default function Chat({
   duration = 0,
-  isRight = false,
   message,
   isLoading = false,
 }: ChatProps) {
@@ -28,30 +26,26 @@ export default function Chat({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ ease: 'easeOut', delay: duration }}
-      className={`w-full flex space-x-4  ${
-        isRight ? 'justify-end' : 'justify-start'
-      }`}
+      className={`w-full flex space-x-4 'justify-start`}
     >
-      {!isRight && (
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          className="rounded-full bg-gray-50 w-16 h-16 relative overflow-hidden"
-        >
-          <Image
-            src="/girl/girl.png"
-            alt="girl"
-            fill
-            className="object-contain scale-[2.6] translate-y-12"
-          />
-        </motion.div>
-      )}
-      <div className="rounded-full text-slate-600  w-fit flex justify-center items-center px-8 py-2 bg-gray-50 h-16">
+      <motion.div
+        whileHover={{ scale: 1.1 }}
+        className="rounded-full bg-gray-50 w-16 h-16 relative overflow-hidden"
+      >
+        <Image
+          src="/mirae/mirae.png"
+          alt="mirae"
+          fill
+          className="object-cover scale-[1.5] -translate-x-4 translate-y-2"
+        />
+      </motion.div>
+      <div className="rounded-full text-slate-600 z-30 w-fit flex justify-center items-center px-8 py-2 bg-gray-50 h-16">
         {startChat ? (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="message font-PoorStory"
+            className="font-PoorStory"
           >
             {message}
           </motion.div>
@@ -59,19 +53,6 @@ export default function Chat({
           <Wait />
         )}
       </div>
-      {isRight && (
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          className="rounded-full bg-gray-50 w-16 h-16 relative overflow-hidden"
-        >
-          <Image
-            src="/mirae/mirae.png"
-            alt="mirae"
-            fill
-            className="object-contain scale-[1.6] translate-x-2 translate-y-4"
-          />
-        </motion.div>
-      )}
     </motion.div>
   );
 }

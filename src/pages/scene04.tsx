@@ -27,7 +27,7 @@ export default function Scene() {
   return (
     <Layout>
       <div className="relative overflow-hidden bg-gradient-to-b w-full from-[#C9D6FF]  to-[#E2E2E2]  flex-col justify-center items-center h-[calc(100vh-2.5rem)] m-5">
-        {/* <motion.div
+        <motion.div
           className="absolute bottom-60 left-40"
           initial={{ opacity: 0 }}
           animate={{ opacity: [0, 1, 0.1] }}
@@ -57,7 +57,7 @@ export default function Scene() {
             height={250}
             alt="mirae"
           />
-        </motion.div> */}
+        </motion.div>
         <div className="chat-box mx-24 my-12 space-y-6">
           <Chats
             chats={[
