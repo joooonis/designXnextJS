@@ -29,7 +29,7 @@ export default function Chat({
       className={`w-full flex space-x-4 'justify-start`}
     >
       <motion.div
-        whileHover={{ scale: 1.1 }}
+        whileHover={{ scale: 1.2 }}
         className="rounded-full bg-gray-50 w-16 h-16 relative overflow-hidden"
       >
         <Image
