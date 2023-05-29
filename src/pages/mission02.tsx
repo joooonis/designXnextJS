@@ -1,6 +1,6 @@
 import Layout from '@components/common/layout-ver2';
 import { animate, motion } from 'framer-motion';
-import Button from '@components/common/button-ver2';
+import Button from '@components/common/b';
 import { useState } from 'react';
 
 export default function Stage() {

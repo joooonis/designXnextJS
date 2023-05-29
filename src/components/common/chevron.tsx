@@ -7,7 +7,7 @@ export default function Chevron({ isRight = true }: ChevronProps) {
   return (
     <motion.div
       className={`w-12 h-12 flex hover:opacity-90 cursor-pointer justify-center items-center rounded-full ${
-        isRight ? 'bg-[#7ca590]' : 'bg-[#88bfa5]'
+        isRight ? 'bg-[#99A87B]' : 'bg-[#B4D3A3]'
       }`}
     >
       {isRight ? (

@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 interface ButtonProps {
   nextPage?: string;
   text: string;
-  color?: 'green' | 'blue' | 'yellow' | 'brown';
+  color?: 'g1' | 'g2' | 'g3' | 'g4' | 'brown';
   className?: string;
 }
 
@@ -15,7 +15,7 @@ export default function Button({
   nextPage,
   text,
   className,
-  color = 'green',
+  color = 'g2',
 }: ButtonProps) {
   const router = useRouter();
 
@@ -29,34 +29,72 @@ export default function Button({
   }, []);
 
   return (
-    (color === 'blue' && (
+    (color === 'g1' && (
       <div
         onClick={() => router.push(`${nextPage}`)}
-        className={`button z-10 opacity-0 items-center flex-col absolute ${className} w-full flex justify-center`}
+        className={`button z-10 opacity-0 items-center flex-col  ${className}  flex justify-center`}
       >
-        <div className="flex cursor-pointer  text-sm h-16 w-64 bg-contain bg-no-repeat bg-center bg-[url('/button/button-blue.png')] text-white justify-center items-center">
+        <div className="relative h-16 w-44 cursor-pointer ">
+          <Image
+            src={'/button/button-g1.png'}
+            fill
+            alt="button"
+            className="object-contain"
+          ></Image>
           <motion.div
             whileHover={{
               translateY: [0, 4, -2, 0],
               transition: { duration: 0.2, ease: 'easeInOut' },
             }}
+            className="flex absolute w-full h-full justify-center items-center text-white"
           >
             {text}
           </motion.div>
         </div>
       </div>
     )) ||
-    (color === 'yellow' && (
+    (color === 'g3' && (
       <div
         onClick={() => router.push(`${nextPage}`)}
-        className={`button z-10 opacity-0 items-center flex-col absolute ${className} w-full flex justify-center`}
+        className={`button z-10 opacity-0 items-center flex-col  ${className}  flex justify-center`}
       >
-        <div className="flex cursor-pointer  text-sm h-16 w-64 bg-contain bg-no-repeat bg-center bg-[url('/button/button-yellow.png')] text-white justify-center items-center">
+        <div className="relative h-16 w-44 cursor-pointer ">
+          <Image
+            src={'/button/button-g3.png'}
+            fill
+            alt="button"
+            className="object-contain"
+          ></Image>
           <motion.div
             whileHover={{
               translateY: [0, 4, -2, 0],
               transition: { duration: 0.2, ease: 'easeInOut' },
             }}
+            className="flex absolute w-full h-full justify-center items-center text-white"
+          >
+            {text}
+          </motion.div>
+        </div>
+      </div>
+    )) ||
+    (color === 'g4' && (
+      <div
+        onClick={() => router.push(`${nextPage}`)}
+        className={`button z-10 opacity-0 items-center flex-col  ${className}  flex justify-center`}
+      >
+        <div className="relative h-16 w-44 cursor-pointer ">
+          <Image
+            src={'/button/button-g4.png'}
+            fill
+            alt="button"
+            className="object-contain"
+          ></Image>
+          <motion.div
+            whileHover={{
+              translateY: [0, 4, -2, 0],
+              transition: { duration: 0.2, ease: 'easeInOut' },
+            }}
+            className="flex absolute w-full h-full justify-center items-center text-white"
           >
             {text}
           </motion.div>
@@ -66,14 +104,21 @@ export default function Button({
     (color === 'brown' && (
       <div
         onClick={() => router.push(`${nextPage}`)}
-        className={`button z-10 opacity-0 items-center flex-col absolute ${className} w-full flex justify-center`}
+        className={`button z-10 opacity-0 items-center flex-col  ${className}  flex justify-center`}
       >
-        <div className="flex cursor-pointer text-base font-medium h-16 w-64 bg-contain bg-no-repeat bg-center bg-[url('/button/button-brown.png')] text-black justify-center items-center">
+        <div className="relative h-16 w-44 cursor-pointer ">
+          <Image
+            src={'/button/button-brown.png'}
+            fill
+            alt="button"
+            className="object-contain"
+          ></Image>
           <motion.div
             whileHover={{
               translateY: [0, 4, -2, 0],
               transition: { duration: 0.2, ease: 'easeInOut' },
             }}
+            className="flex absolute w-full h-full justify-center items-center text-white"
           >
             {text}
           </motion.div>
@@ -82,11 +127,11 @@ export default function Button({
     )) || (
       <div
         onClick={() => router.push(`${nextPage}`)}
-        className={`button z-10 opacity-0 items-center flex-col absolute ${className} w-full flex justify-center`}
+        className={`button z-10 opacity-0 items-center flex-col  ${className}  flex justify-center`}
       >
         <div className="relative h-16 w-44 cursor-pointer ">
           <Image
-            src={'/button/button-green.png'}
+            src={'/button/button-g2.png'}
             fill
             alt="button"
             className="object-contain"

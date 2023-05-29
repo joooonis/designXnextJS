@@ -124,6 +124,14 @@ export default function Home() {
             alt="leaf-2"
           />
         </div>
+        <div className="absolute bottom-0 origin-bottom right-60 leaf-3">
+          <Image
+            src="/svg/leaf-green-3.svg"
+            width={16}
+            height={16}
+            alt="leaf-3"
+          />
+        </div>
         <div className="reveal bg-center bg-[length:110%_110%] bg-[url('/mirae/background.png')] opacity-0 scale-110 mx-auto h-96 w-96 z-10 translate-y-60 items-center flex-col relative flex justify-center trnaslate-y-1/2">
           <Image
             className="absolute translate-y-1"
@@ -154,19 +162,13 @@ export default function Home() {
             alt="fin-3"
           />
         </div>
-
         {buttonRender && (
-          <Button nextPage="/scene01" text="E N T E R" className="bottom-1/4" />
+          <div className="absolute bottom-40 flex w-full space-x-8 justify-center items-center">
+            <Button nextPage="/scene01" color="g2" text="S T O R Y" />
+            <Button nextPage="/field" color="g3" text="M I R A E" />
+            <Button nextPage="/mission" color="g4" text="M I S S I O N" />
+          </div>
         )}
-
-        <div className="absolute bottom-0 origin-bottom right-60 leaf-3">
-          <Image
-            src="/svg/leaf-green-3.svg"
-            width={16}
-            height={16}
-            alt="leaf-3"
-          />
-        </div>
         <div className="relative" id="snow"></div>
       </div>
     </Layout>

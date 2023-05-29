@@ -38,7 +38,7 @@ export default function Scene() {
                 message: '그렇게 되면 나도 다시 친구들을 만날 수 있을거야!',
               },
               {
-                message: '바다살리기를 도와주겠어?',
+                message: '너의 도움이 필요해! 바다살리기를 도와주겠어?',
               },
             ]}
             durations={[3, 7, 11, 13]}
