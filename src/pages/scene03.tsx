@@ -1,75 +1,52 @@
 import Layout from '@components/common/layout';
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import anime from 'animejs';
 import Button from '@components/common/button';
 import Chats from '@components/chat/chats';
+import { motion } from 'framer-motion';
 export default function Scene() {
   const [buttonRender, setButtonRender] = useState(false);
 
   useEffect(() => {
-    anime({
-      targets: '.grass-1',
-      opacity: [0, 1],
-      easing: 'easeInOutQuad',
-      delay: 300,
-      duration: 3000,
-    });
-    anime({
-      targets: '.grass-2',
-      opacity: [0, 1],
-      easing: 'easeInOutQuad',
-      delay: 600,
-      duration: 3000,
-    });
-  }, []);
-
-  useEffect(() => {
     setTimeout(() => {
       setButtonRender(true);
-    }, 17000);
+    }, 20000);
   }, []);
 
   return (
     <Layout>
-      <div className="relative overflow-hidden bg-gradient-to-b w-full from-[#D3CCE3] to-[#F6F3FA]  flex-col justify-center items-center h-[calc(100vh-2.5rem)] m-5">
-        <div className="chat-box mx-24 my-12 space-y-6">
+      <div className="relative w-full overflow-hidden flex-col justify-center items-center h-[calc(100vh-2.5rem)] m-5">
+        <motion.img
+          src="/scene03/scene03.png"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: [0, 1] }}
+          transition={{ duration: 3 }}
+          className="background w-full absolute opacity-50"
+        ></motion.img>
+        <div className="mx-24 my-12 z-20 space-y-6">
           <Chats
             chats={[
               {
-                isRight: true,
-                isLoading: true,
                 message:
-                  '시간이 흐르고 친구들과 가족들은 점점 내 곁을 떠나갔어',
-              },
-              {
-                isRight: false,
-                message: '이럴수가 왜 그런거야?',
-              },
-              {
-                isRight: true,
+                  '내가 살던 바다 아래에는 쓰레기가 쌓이고, 더 이상 예전처럼은 살 수 없게 되었어.',
                 isLoading: true,
-                message: '환경이 파괴되고 먹이를 점점 구할 수가 없게 되었거든',
               },
               {
-                isRight: false,
-                message: '...내가 무언가 할 수 있는게 없을까?',
+                message:
+                  '친구들도 하나둘씩 사라지고, 엄마와도 결국 헤어지고야 말았지...',
+              },
+              {
+                message: '이제는 나 혼자밖에는 없어. 어떻게 하면 좋을까?',
               },
             ]}
-            durations={[3, 8, 11, 16]}
+            durations={[6, 10, 14, 18]}
           />
         </div>
-        <div className="absolute w-full -right-20 top-20">
-          {/* <Mirae /> */}
-        </div>
-        {buttonRender && (
-          <Button
-            nextPage="/scene04"
-            text="N E X T"
-            className="bottom-[160px]"
-            color="purple"
-          />
-        )}
+        <Button
+          nextPage="/scene04"
+          text="N E X T"
+          color="green"
+          className={`bottom-[160px] ${buttonRender ? 'visible' : 'invisible'}`}
+        />
       </div>
     </Layout>
   );

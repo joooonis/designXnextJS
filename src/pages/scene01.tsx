@@ -18,14 +18,14 @@ export default function Scene() {
         <motion.img
           src="/scene01/mirae.png"
           initial={{ opacity: 0 }}
-          animate={{ opacity: [0, 1, 0.6] }}
+          animate={{ opacity: [0, 1] }}
           transition={{ duration: 4, delay: 2 }}
           className="mirae w-full h-full absolute z-10 opacity-50"
         ></motion.img>
         <motion.img
           src="/scene01/background.png"
           initial={{ opacity: 0 }}
-          animate={{ opacity: [0, 0.3, 0.7, 1, 0.6] }}
+          animate={{ opacity: [0, 1] }}
           transition={{ duration: 6 }}
           className="background w-full h-full absolute opacity-50"
         ></motion.img>
@@ -38,7 +38,7 @@ export default function Scene() {
               },
               {
                 isLoading: true,
-                message: '지금 듀공들은 힘든 시기를 보내고 있어..',
+                message: '지금 우리 듀공들은 힘든 시기를 보내고 있어..',
               },
               {
                 isLoading: true,

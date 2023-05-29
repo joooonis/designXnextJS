@@ -9,7 +9,7 @@ export default function Scene() {
   useEffect(() => {
     setTimeout(() => {
       setButtonRender(true);
-    }, 18000);
+    }, 20000);
   }, []);
 
   return (
@@ -18,21 +18,21 @@ export default function Scene() {
         <motion.img
           src="/scene02/mirae-mom.png"
           initial={{ opacity: 0 }}
-          animate={{ opacity: [0, 1, 0.6] }}
+          animate={{ opacity: [0, 1] }}
           transition={{ duration: 4, delay: 2 }}
           className="mirae w-[1280px] right-0 absolute z-10 opacity-50"
         ></motion.img>
         <motion.img
           src="/scene02/mirae-baby.png"
           initial={{ opacity: 0 }}
-          animate={{ opacity: [0, 1, 0.6] }}
+          animate={{ opacity: [0, 1] }}
           transition={{ duration: 4, delay: 2 }}
           className="mirae w-[1280px] right-0 absolute z-10 opacity-50"
         ></motion.img>
         <motion.img
           src="/scene02/background.png"
           initial={{ opacity: 0 }}
-          animate={{ opacity: [0, 0.3, 0.7, 1, 0.6] }}
+          animate={{ opacity: [0, 1] }}
           transition={{ duration: 6 }}
           className="background w-full absolute opacity-50"
         ></motion.img>
@@ -52,14 +52,17 @@ export default function Scene() {
                 message:
                   '그때는 친구들고 많고 먹이도 많았는데, 바다가 점점 더러워지면서 친구들이 사라지고 먹이도 없어졌어..',
               },
+              {
+                message: '그러다가 결국에는...',
+              },
             ]}
-            durations={[6, 10, 14]}
+            durations={[6, 10, 14, 18]}
           />
         </div>
         <Button
-          nextPage="/scene02"
+          nextPage="/scene03"
           text="N E X T"
-          color="blue"
+          color="green"
           className={`bottom-[160px] ${buttonRender ? 'visible' : 'invisible'}`}
         />
       </div>

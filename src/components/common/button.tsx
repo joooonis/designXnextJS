@@ -1,12 +1,13 @@
 import anime from 'animejs';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 
 interface ButtonProps {
   nextPage?: string;
   text: string;
-  color?: 'green' | 'blue' | 'purple' | 'lavender';
+  color?: 'green' | 'blue' | 'yellow' | 'brown';
   className?: string;
 }
 
@@ -33,7 +34,7 @@ export default function Button({
         onClick={() => router.push(`${nextPage}`)}
         className={`button z-10 opacity-0 items-center flex-col absolute ${className} w-full flex justify-center`}
       >
-        <div className="flex cursor-pointer  text-sm h-16 w-64 bg-contain bg-no-repeat bg-center bg-[url('/svg/enter-button-blue.svg')] text-white justify-center items-center">
+        <div className="flex cursor-pointer  text-sm h-16 w-64 bg-contain bg-no-repeat bg-center bg-[url('/button/button-blue.png')] text-white justify-center items-center">
           <motion.div
             whileHover={{
               translateY: [0, 4, -2, 0],
@@ -45,12 +46,12 @@ export default function Button({
         </div>
       </div>
     )) ||
-    (color === 'purple' && (
+    (color === 'yellow' && (
       <div
         onClick={() => router.push(`${nextPage}`)}
         className={`button z-10 opacity-0 items-center flex-col absolute ${className} w-full flex justify-center`}
       >
-        <div className="flex cursor-pointer  text-sm h-16 w-64 bg-contain bg-no-repeat bg-center bg-[url('/svg/enter-button-purple.svg')] text-white justify-center items-center">
+        <div className="flex cursor-pointer  text-sm h-16 w-64 bg-contain bg-no-repeat bg-center bg-[url('/button/button-yellow.png')] text-white justify-center items-center">
           <motion.div
             whileHover={{
               translateY: [0, 4, -2, 0],
@@ -62,12 +63,12 @@ export default function Button({
         </div>
       </div>
     )) ||
-    (color === 'lavender' && (
+    (color === 'brown' && (
       <div
         onClick={() => router.push(`${nextPage}`)}
         className={`button z-10 opacity-0 items-center flex-col absolute ${className} w-full flex justify-center`}
       >
-        <div className="flex cursor-pointer  text-sm h-16 w-64 bg-contain bg-no-repeat bg-center bg-[url('/svg/enter-button-lavender.svg')] text-white justify-center items-center">
+        <div className="flex cursor-pointer text-base font-medium h-16 w-64 bg-contain bg-no-repeat bg-center bg-[url('/button/button-brown.png')] text-black justify-center items-center">
           <motion.div
             whileHover={{
               translateY: [0, 4, -2, 0],
@@ -83,12 +84,19 @@ export default function Button({
         onClick={() => router.push(`${nextPage}`)}
         className={`button z-10 opacity-0 items-center flex-col absolute ${className} w-full flex justify-center`}
       >
-        <div className="flex cursor-pointer  text-sm h-16 w-64 bg-contain bg-no-repeat bg-center bg-[url('/svg/enter-button-green.svg')] text-white justify-center items-center">
+        <div className="relative h-16 w-44 cursor-pointer ">
+          <Image
+            src={'/button/button-green.png'}
+            fill
+            alt="button"
+            className="object-contain"
+          ></Image>
           <motion.div
             whileHover={{
               translateY: [0, 4, -2, 0],
               transition: { duration: 0.2, ease: 'easeInOut' },
             }}
+            className="flex absolute w-full h-full justify-center items-center text-white"
           >
             {text}
           </motion.div>

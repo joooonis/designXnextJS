@@ -1,3 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.gradient-gradient1 {
+  background: linear-gradient(
+    to top,
+    #3c6973 20%,
+    #64888c 40%,
+    #c7d9cc 60%,
+    #f4fdd9 80%,
+    #ffe8c2 100%
+  );
+}
+
+.gradient-gradient2 {
+  background: linear-gradient(
+    to top,
+    #3c6973 15%,
+    #c7d9cc 30%,
+    #f2e0d0 50%,
+    #64888c 70%,
+    #d9c6ba 85%
+  );
+}
+
+.gradient-gradient3 {
+  background: linear-gradient(
+    to top,
+    #d9c6ba 10%,
+    #f2e0d0 25%,
+    #64888c 40%,
+    #3c6973 55%,
+    #c7d9cc 70%
+  );
+}

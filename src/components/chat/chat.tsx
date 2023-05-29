@@ -26,7 +26,7 @@ export default function Chat({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ ease: 'easeOut', delay: duration }}
-      className={`w-full flex space-x-4 'justify-start`}
+      className="w-full flex space-x-4 'justify-start"
     >
       <motion.div
         whileHover={{ scale: 1.2 }}

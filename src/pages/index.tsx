@@ -103,11 +103,11 @@ export default function Home() {
 
   return (
     <Layout>
-      <div className="relative overflow-hidden bg-gradient-to-b w-full from-[rgba(255,244,228,1)] to-[rgba(240,246,238,1)] from-7% to-70% flex-col justify-center items-center h-[calc(100vh-2.5rem)] m-5">
-        <div className="w-full absolute top-44 text-[#403227] title text-xl my-auto font-medium text-center">
+      <div className="relative overflow-hidden bg-gradient-to-b w-full from-[rgba(255,244,228,1)] to-[rgba(240,246,238,1)] from-10% to-50% flex-col justify-center items-center h-[calc(100vh-2.5rem)] m-5">
+        <div className="w-full font-Ubuntu font-normal absolute top-44 text-[#403227] title text-2xl my-auto text-center">
           The story of a little dugeong, MIRAE
         </div>
-        <div className="absolute bottom-0 origin-bottom left-16">
+        <div className="absolute bottom-0 origin-bottom left-40">
           <Image
             className="leaf-1"
             src="/svg/leaf-green-1.svg"
@@ -116,7 +116,7 @@ export default function Home() {
             alt="leaf-1"
           />
         </div>
-        <div className="absolute bottom-0 origin-bottom right-16 leaf-2">
+        <div className="absolute bottom-0 origin-bottom right-40 leaf-2">
           <Image
             src="/svg/leaf-green-2.svg"
             width={10}
@@ -159,7 +159,7 @@ export default function Home() {
           <Button nextPage="/scene01" text="E N T E R" className="bottom-1/4" />
         )}
 
-        <div className="absolute bottom-0 origin-bottom right-24 leaf-3">
+        <div className="absolute bottom-0 origin-bottom right-60 leaf-3">
           <Image
             src="/svg/leaf-green-3.svg"
             width={16}
