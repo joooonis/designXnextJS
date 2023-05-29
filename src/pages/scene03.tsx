@@ -9,7 +9,7 @@ export default function Scene() {
   useEffect(() => {
     setTimeout(() => {
       setButtonRender(true);
-    }, 20000);
+    }, 14000);
   }, []);
 
   return (
@@ -35,16 +35,17 @@ export default function Scene() {
                   '친구들도 하나둘씩 사라지고, 엄마와도 결국 헤어지고야 말았지...',
               },
               {
+                isLoading: true,
                 message: '이제는 나 혼자밖에는 없어. 어떻게 하면 좋을까?',
               },
             ]}
-            durations={[6, 10, 14, 18]}
+            durations={[3, 7, 9, 13]}
           />
         </div>
         <Button
           nextPage="/scene04"
           text="N E X T"
-          color="green"
+          color="brown"
           className={`bottom-[160px] ${buttonRender ? 'visible' : 'invisible'}`}
         />
       </div>

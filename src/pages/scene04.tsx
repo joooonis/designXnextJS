@@ -9,7 +9,7 @@ export default function Scene() {
   useEffect(() => {
     setTimeout(() => {
       setButtonRender(true);
-    }, 20000);
+    }, 14000);
   }, []);
 
   return (
@@ -41,12 +41,12 @@ export default function Scene() {
                 message: '바다살리기를 도와주겠어?',
               },
             ]}
-            durations={[6, 10, 14, 18]}
+            durations={[3, 7, 11, 13]}
           />
         </div>
         <Button
           nextPage="/scene04"
-          text="N E X T"
+          text="E N D"
           color="brown"
           className={`bottom-[160px] ${buttonRender ? 'visible' : 'invisible'}`}
         />
