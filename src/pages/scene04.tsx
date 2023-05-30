@@ -23,7 +23,7 @@ export default function Scene() {
           className="mirae w-[1280px] right-0 absolute z-10 opacity-50"
         ></motion.img>
         <motion.img
-          src="/scene04/background.png"
+          src="/scene04/bg.png"
           initial={{ opacity: 0 }}
           animate={{ opacity: [0, 1] }}
           transition={{ duration: 6 }}
