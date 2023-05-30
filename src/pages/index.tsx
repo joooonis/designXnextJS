@@ -3,6 +3,7 @@ import anime from 'animejs';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import Button from '@components/common/button';
+import Leaf from '@components/leaf/leaf';
 
 export default function Home() {
   const [buttonRender, setButtonRender] = useState(false);
@@ -33,36 +34,6 @@ export default function Home() {
           setButtonRender(true);
         },
       });
-
-    // leaf animation
-    anime({
-      targets: '.leaf-1',
-      rotate: [
-        { value: '10deg', duration: 2000 },
-        { value: '5deg', duration: 2000 },
-        { value: '0deg', duration: 2000 },
-      ],
-      loop: true,
-      easing: 'easeInOutSine',
-    });
-    anime({
-      targets: '.leaf-2',
-      rotate: [
-        { value: '5deg', duration: 1000 },
-        { value: '0deg', duration: 1000 },
-      ],
-      loop: true,
-      easing: 'easeInOutSine',
-    });
-    anime({
-      targets: '.leaf-3',
-      rotate: [
-        { value: '-10deg', duration: 2000 },
-        { value: '0deg', duration: 2000 },
-      ],
-      loop: true,
-      easing: 'easeInOutSine',
-    });
 
     anime({
       targets: '.fin-1',
@@ -107,31 +78,7 @@ export default function Home() {
         <div className="w-full font-Ubuntu font-normal absolute top-44 text-[#403227] title text-2xl my-auto text-center">
           The story of a little dugeong, MIRAE
         </div>
-        <div className="absolute bottom-0 origin-bottom left-40">
-          <Image
-            className="leaf-1"
-            src="/svg/leaf-green-1.svg"
-            width={40}
-            height={40}
-            alt="leaf-1"
-          />
-        </div>
-        <div className="absolute bottom-0 origin-bottom right-40 leaf-2">
-          <Image
-            src="/svg/leaf-green-2.svg"
-            width={10}
-            height={10}
-            alt="leaf-2"
-          />
-        </div>
-        <div className="absolute bottom-0 origin-bottom right-60 leaf-3">
-          <Image
-            src="/svg/leaf-green-3.svg"
-            width={16}
-            height={16}
-            alt="leaf-3"
-          />
-        </div>
+        <Leaf />
         <div className="reveal bg-center bg-[length:110%_110%] bg-[url('/mirae/background.png')] opacity-0 scale-110 mx-auto h-96 w-96 z-10 translate-y-60 items-center flex-col relative flex justify-center trnaslate-y-1/2">
           <Image
             className="absolute translate-y-1"
@@ -166,7 +113,7 @@ export default function Home() {
           <div className="absolute bottom-40 flex w-full space-x-8 justify-center items-center">
             <Button nextPage="/scene01" color="g2" text="S T O R Y" />
             <Button nextPage="/field" color="g3" text="M I R A E" />
-            <Button nextPage="/mission" color="g4" text="M I S S I O N" />
+            <Button nextPage="/mission01" color="g4" text="M I S S I O N" />
           </div>
         )}
         <div className="relative" id="snow"></div>
