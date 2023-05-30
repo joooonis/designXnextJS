@@ -1,11 +1,13 @@
 import { motion } from 'framer-motion';
 
-interface ChevronProps {
+interface ChevronProps extends React.HTMLAttributes<HTMLButtonElement> {
   isRight?: boolean;
+  onClick?: () => void;
 }
-export default function Chevron({ isRight = true }: ChevronProps) {
+export default function Chevron({ isRight = true, onClick }: ChevronProps) {
   return (
-    <motion.div
+    <motion.button
+      onClick={onClick}
       className={`w-12 h-12 flex hover:opacity-90 cursor-pointer justify-center items-center rounded-full ${
         isRight ? 'bg-[#99A87B]' : 'bg-[#B4D3A3]'
       }`}
@@ -49,6 +51,6 @@ export default function Chevron({ isRight = true }: ChevronProps) {
           />
         </motion.svg>
       )}
-    </motion.div>
+    </motion.button>
   );
 }

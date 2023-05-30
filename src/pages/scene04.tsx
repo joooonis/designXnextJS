@@ -46,9 +46,11 @@ export default function Scene() {
         </div>
         <Button
           nextPage="/scene04"
-          text="E N D"
+          text="미래를 도우러 가요!"
           color="brown"
-          className={`bottom-[160px] ${buttonRender ? 'visible' : 'invisible'}`}
+          className={`bottom-[160px] font-PoorStory text-black ${
+            buttonRender ? 'visible' : 'invisible'
+          }`}
         />
       </div>
     </Layout>

@@ -61,7 +61,7 @@ export default function Scene() {
         </div>
         <Button
           nextPage="/scene03"
-          text="N E X T"
+          text="다음"
           color="brown"
           className={`bottom-[160px] ${buttonRender ? 'visible' : 'invisible'}`}
         />
