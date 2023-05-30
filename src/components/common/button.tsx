@@ -10,6 +10,7 @@ interface ButtonProps {
   color?: 'g1' | 'g2' | 'g3' | 'g4' | 'brown';
   className?: string;
   size?: 'small' | 'medium' | 'large';
+  onClick?: () => void;
 }
 
 export default function Button({
@@ -18,6 +19,7 @@ export default function Button({
   className,
   color = 'g2',
   size,
+  onClick,
 }: ButtonProps) {
   const router = useRouter();
 
@@ -33,7 +35,13 @@ export default function Button({
   return (
     (color === 'g1' && (
       <div
-        onClick={() => router.push(`${nextPage}`)}
+        onClick={() => {
+          if (onClick) {
+            onClick();
+            return;
+          }
+          router.push(`${nextPage}`);
+        }}
         className={`button z-10 opacity-0 items-center flex-col  ${className}  flex justify-center`}
       >
         <div className="relative h-16 w-44 cursor-pointer ">
@@ -57,7 +65,13 @@ export default function Button({
     )) ||
     (color === 'g3' && (
       <div
-        onClick={() => router.push(`${nextPage}`)}
+        onClick={() => {
+          if (onClick) {
+            onClick();
+            return;
+          }
+          router.push(`${nextPage}`);
+        }}
         className={`button z-10 opacity-0 items-center flex-col  ${className}  flex justify-center`}
       >
         <div className="relative h-16 w-44 cursor-pointer ">
@@ -81,7 +95,13 @@ export default function Button({
     )) ||
     (color === 'g4' && (
       <div
-        onClick={() => router.push(`${nextPage}`)}
+        onClick={() => {
+          if (onClick) {
+            onClick();
+            return;
+          }
+          router.push(`${nextPage}`);
+        }}
         className={`button z-10 opacity-0 items-center flex-col  ${className}  flex justify-center`}
       >
         <div className="relative h-16 w-44 cursor-pointer ">
