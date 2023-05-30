@@ -9,17 +9,24 @@ export default function Scene() {
   useEffect(() => {
     setTimeout(() => {
       setButtonRender(true);
-    }, 14000);
+    }, 15000);
   }, []);
 
   return (
     <Layout>
       <div className="relative w-full overflow-hidden flex-col justify-center items-center h-[calc(100vh-2.5rem)] m-5">
         <motion.img
-          src="/scene03/scene03.png"
+          src="/scene03/mirae.png"
           initial={{ opacity: 0 }}
           animate={{ opacity: [0, 1] }}
-          transition={{ duration: 3 }}
+          transition={{ duration: 4, delay: 2 }}
+          className="mirae w-[1280px] right-0 absolute z-10 opacity-50"
+        ></motion.img>
+        <motion.img
+          src="/scene03/background.png"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: [0, 1] }}
+          transition={{ duration: 6 }}
           className="background w-full absolute opacity-50"
         ></motion.img>
         <div className="mx-24 my-12 z-20 space-y-6">
@@ -40,14 +47,16 @@ export default function Scene() {
                   '이제는 나 혼자 이 바다를 떠돌아다니고 있어. 어떻게 하면 좋을까?',
               },
             ]}
-            durations={[3, 7, 9, 13]}
+            durations={[4, 9, 11]}
           />
         </div>
         <Button
           nextPage="/scene04"
-          text="N E X T"
+          text="다음"
           color="brown"
-          className={`bottom-[160px] ${buttonRender ? 'visible' : 'invisible'}`}
+          className={`bottom-[160px] font-PoorStory ${
+            buttonRender ? 'visible' : 'invisible'
+          }`}
         />
       </div>
     </Layout>

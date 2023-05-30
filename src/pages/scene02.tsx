@@ -63,7 +63,9 @@ export default function Scene() {
           nextPage="/scene03"
           text="다음"
           color="brown"
-          className={`bottom-[160px] ${buttonRender ? 'visible' : 'invisible'}`}
+          className={`bottom-[160px] font-PoorStory ${
+            buttonRender ? 'visible' : 'invisible'
+          }`}
         />
       </div>
     </Layout>

@@ -9,17 +9,24 @@ export default function Scene() {
   useEffect(() => {
     setTimeout(() => {
       setButtonRender(true);
-    }, 14000);
+    }, 15000);
   }, []);
 
   return (
     <Layout>
       <div className="relative w-full overflow-hidden flex-col justify-center items-center h-[calc(100vh-2.5rem)] m-5">
         <motion.img
-          src="/scene04/scene04.png"
+          src="/scene04/mirae.png"
           initial={{ opacity: 0 }}
           animate={{ opacity: [0, 1] }}
-          transition={{ duration: 3 }}
+          transition={{ duration: 4, delay: 2 }}
+          className="mirae w-[1280px] right-0 absolute z-10 opacity-50"
+        ></motion.img>
+        <motion.img
+          src="/scene04/background.png"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: [0, 1] }}
+          transition={{ duration: 6 }}
           className="background w-full absolute opacity-50"
         ></motion.img>
         <div className="mx-24 my-12 z-20 space-y-6">
@@ -41,13 +48,14 @@ export default function Scene() {
                 message: '너의 도움이 필요해! 바다살리기를 도와주겠어?',
               },
             ]}
-            durations={[3, 7, 11, 13]}
+            durations={[4, 8, 12, 14]}
           />
         </div>
         <Button
-          nextPage="/scene04"
+          nextPage="/field"
           text="미래를 도우러 가요!"
           color="brown"
+          size="large"
           className={`bottom-[160px] font-PoorStory text-black ${
             buttonRender ? 'visible' : 'invisible'
           }`}

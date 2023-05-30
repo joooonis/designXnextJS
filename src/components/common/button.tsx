@@ -9,6 +9,7 @@ interface ButtonProps {
   text: string;
   color?: 'g1' | 'g2' | 'g3' | 'g4' | 'brown';
   className?: string;
+  size?: 'small' | 'medium' | 'large';
 }
 
 export default function Button({
@@ -16,6 +17,7 @@ export default function Button({
   text,
   className,
   color = 'g2',
+  size,
 }: ButtonProps) {
   const router = useRouter();
 
@@ -101,6 +103,30 @@ export default function Button({
         </div>
       </div>
     )) ||
+    (color === 'brown' && size === 'large' && (
+      <div
+        onClick={() => router.push(`${nextPage}`)}
+        className={`button z-10 opacity-0 items-center flex-col absolute ${className} w-full flex justify-center`}
+      >
+        <div className="relative h-16 w-44 cursor-pointer ">
+          <Image
+            src={'/button/button-brown.png'}
+            fill
+            alt="button"
+            className="object-contain scale-x-125"
+          ></Image>
+          <motion.div
+            whileHover={{
+              translateY: [0, 4, -2, 0],
+              transition: { duration: 0.2, ease: 'easeInOut' },
+            }}
+            className="flex absolute w-full h-full justify-center items-center"
+          >
+            {text}
+          </motion.div>
+        </div>
+      </div>
+    )) ||
     (color === 'brown' && (
       <div
         onClick={() => router.push(`${nextPage}`)}
@@ -141,7 +167,7 @@ export default function Button({
               translateY: [0, 4, -2, 0],
               transition: { duration: 0.2, ease: 'easeInOut' },
             }}
-            className="flex absolute w-full h-full justify-center font-PoorStory items-center text-white"
+            className="flex absolute w-full h-full justify-center items-center text-white"
           >
             {text}
           </motion.div>
