@@ -6,9 +6,9 @@ interface ChevronProps extends React.HTMLAttributes<HTMLButtonElement> {
 }
 export default function Chevron({ isRight = true, onClick }: ChevronProps) {
   return (
-    <motion.button
+    <motion.div
       onClick={onClick}
-      className={`w-12 h-12 flex hover:opacity-90 cursor-pointer justify-center items-center rounded-full ${
+      className={`w-12 h-12 flex cursor-pointer justify-center items-center rounded-full ${
         isRight ? 'bg-[#99A87B]' : 'bg-[#B4D3A3]'
       }`}
     >
@@ -19,7 +19,7 @@ export default function Chevron({ isRight = true, onClick }: ChevronProps) {
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="white"
-          className="w-6 h-6 cursor-pointer"
+          className="w-6 h-6"
           whileHover={{
             translateY: [0, 4, -2, 0],
             transition: { duration: 0.2, ease: 'easeInOut' },
@@ -38,7 +38,7 @@ export default function Chevron({ isRight = true, onClick }: ChevronProps) {
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="white"
-          className="w-6 h-6 cursor-pointer"
+          className="w-6 h-6"
           whileHover={{
             translateY: [0, 4, -2, 0],
             transition: { duration: 0.2, ease: 'easeInOut' },
@@ -51,6 +51,6 @@ export default function Chevron({ isRight = true, onClick }: ChevronProps) {
           />
         </motion.svg>
       )}
-    </motion.button>
+    </motion.div>
   );
 }
