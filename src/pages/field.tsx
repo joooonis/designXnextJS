@@ -105,7 +105,7 @@ export default function Field() {
             <div className="-translate-x-16 translate-y-10">
               <Mirae />
               {fieldNumber === 0 && (
-                <div className="absolute -top-10 translate-x-40">
+                <div className="absolute -top-10 left-1/2">
                   <ChatWithTail
                     duration={3}
                     message="내가 어디에 있을까?"
@@ -114,7 +114,7 @@ export default function Field() {
                 </div>
               )}
               {fieldNumber === 1 && (
-                <div className="absolute -top-10 translate-x-40">
+                <div className="absolute -top-10 left-1/2">
                   <ChatWithTail
                     duration={1}
                     message="기분이 별로야... 어서 오늘의 환경 미션을 수행해줘."
@@ -123,7 +123,7 @@ export default function Field() {
                 </div>
               )}
               {fieldNumber === 2 && (
-                <div className="absolute -top-10 translate-x-40">
+                <div className="absolute -top-10 left-1/2">
                   <ChatWithTail
                     duration={1}
                     message="오늘은 분리수거 하는 날이야!"
@@ -132,7 +132,7 @@ export default function Field() {
                 </div>
               )}
               {fieldNumber === 3 && (
-                <div className="absolute -top-10 translate-x-40">
+                <div className="absolute -top-10 left-1/2">
                   <ChatWithTail
                     duration={1}
                     message="우아 덕분에 방이 깨끗해졌어. 다음에도 미션을 잘 수행해줘!"

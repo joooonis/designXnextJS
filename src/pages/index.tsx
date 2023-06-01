@@ -76,7 +76,7 @@ export default function Home() {
     <Layout>
       <div className="relative overflow-hidden bg-gradient-to-b w-full from-[rgba(255,244,228,1)] to-[rgba(240,246,238,1)] from-10% to-50% flex-col justify-center items-center h-[calc(100vh-2.5rem)] m-5">
         <div className="w-full font-Ubuntu font-normal absolute top-44 text-[#403227] title text-2xl my-auto text-center">
-          The story of a little dugeong, MIRAE
+          The story of a little dugong, MIRAE
         </div>
         <Leaf />
         <div className="reveal bg-center bg-[length:110%_110%] bg-[url('/mirae/background.png')] opacity-0 scale-110 mx-auto h-96 w-96 z-10 translate-y-60 items-center flex-col relative flex justify-center trnaslate-y-1/2">
