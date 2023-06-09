@@ -83,13 +83,16 @@ export default function Field() {
               ></motion.img>
             )}
             {fieldNumber === 2 && (
-              <motion.img
-                src="/field/mission.png"
+              <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: [0, 1] }}
                 transition={{ duration: 1 }}
-                className="background shadow-lg ml-16 max-w-[1024px]"
-              ></motion.img>
+                className="background shadow-lg ml-16 max-w-[1024px] w-[1024px]"
+              >
+                <video autoPlay controls className="object-cover">
+                  <source src="/videos/03.mp4" type="video/mp4" />
+                </video>
+              </motion.div>
             )}
             {fieldNumber === 3 && (
               <motion.img
