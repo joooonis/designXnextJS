@@ -29,12 +29,6 @@ export default function Stage() {
           className="w-full flex justify-center space-x-10 items-center"
         >
           <Button text="네" className="bottom-40" nextPage="/mission02" />
-          <Button
-            text="아니요"
-            className="bottom-40"
-            color="g3"
-            onClick={handleClick}
-          />
         </motion.div>
         {isClicked && (
           <motion.div

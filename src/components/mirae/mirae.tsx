@@ -53,7 +53,7 @@ export default function Mirae() {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 3, delay: 2 }}
+      transition={{ duration: 3, delay: 0.5 }}
       className="reveal transform scale-x-[-1] mx-auto h-96 w-96 z-10  items-center flex-col relative flex justify-center trnaslate-y-1/2"
     >
       <Image
