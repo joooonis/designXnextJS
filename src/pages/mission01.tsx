@@ -2,7 +2,6 @@ import Layout from '@components/common/layout-ver2';
 import { motion } from 'framer-motion';
 import Button from '@components/common/button';
 import { useState } from 'react';
-import Image from 'next/image';
 import Leaf from '@components/leaf/leaf';
 
 export default function Stage() {

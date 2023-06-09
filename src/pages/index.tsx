@@ -71,8 +71,8 @@ export default function Home() {
       easing: 'easeInOutSine',
     });
   }, []);
-
-  return (
+ 
+  return ( 
     <Layout>
       <div className="relative overflow-hidden bg-gradient-to-b w-full from-[rgba(255,244,228,1)] to-[rgba(240,246,238,1)] from-10% to-50% flex-col justify-center items-center h-[calc(100vh-2.5rem)] m-5">
         <div className="w-full font-Ubuntu font-normal absolute top-44 text-[#403227] title text-2xl my-auto text-center">
