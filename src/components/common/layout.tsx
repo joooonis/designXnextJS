@@ -12,7 +12,7 @@ export default function Layout({ children }: LayoutProps) {
       transition={{ ease: 'easeOut', duration: 1 }}
       exit={{ scale: 0.9, opacity: 0, transition: { duration: 0.5 } }}
     >
-      <div className="w-full relative overflow-hidden bg-[#ebebeb] font-Balsamiq h-full flex justify-center items-center">
+      <div className="bg-gradient-to-b  from-[rgba(255,244,228,1)] to-[rgba(240,246,238,1)] from-10% to-50% w-full relative overflow-hidden font-Balsamiq h-full flex justify-center items-center">
         {children}
       </div>
     </motion.div>

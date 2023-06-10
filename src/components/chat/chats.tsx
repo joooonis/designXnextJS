@@ -13,7 +13,7 @@ export default function Chats({
   durations: number[];
 }) {
   return (
-    <div className="chat-box mx-60 my-12 space-y-8">
+    <div className="mo:mx-60 space-y-2 flex flex-col items-start  mo:space-y-8">
       {chats.map((chat, index) => (
         <Chat
           duration={durations[index]}
