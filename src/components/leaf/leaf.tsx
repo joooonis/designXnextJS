@@ -38,7 +38,7 @@ export default function Leaf() {
 
   return (
     <>
-      <div className="absolute bottom-0 origin-bottom left-40">
+      <div className="absolute bottom-0 origin-bottom left-1/2">
         <Image
           className="leaf-1"
           src="/svg/leaf-green-1.svg"
@@ -47,7 +47,7 @@ export default function Leaf() {
           alt="leaf-1"
         />
       </div>
-      <div className="absolute bottom-0 origin-bottom right-40 leaf-2">
+      <div className="absolute bottom-0 origin-bottom right-1/4 leaf-2">
         <Image
           src="/svg/leaf-green-2.svg"
           width={10}
@@ -55,7 +55,7 @@ export default function Leaf() {
           alt="leaf-2"
         />
       </div>
-      <div className="absolute bottom-0 origin-bottom right-60 leaf-3">
+      <div className="absolute bottom-0 origin-bottom right-3/4 leaf-3">
         <Image
           src="/svg/leaf-green-3.svg"
           width={16}

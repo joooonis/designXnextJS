@@ -71,46 +71,49 @@ export default function Home() {
       easing: 'easeInOutSine',
     });
   }, []);
- 
-  return ( 
+
+  return (
     <Layout>
       <div className="relative overflow-hidden bg-gradient-to-b w-full from-[rgba(255,244,228,1)] to-[rgba(240,246,238,1)] from-10% to-50% flex-col justify-center items-center h-[calc(100vh-2.5rem)] m-5">
-        <div className="w-full font-Ubuntu font-normal absolute top-44 text-[#403227] title text-2xl my-auto text-center">
+        <div className="w-full font-Ubuntu font-normal mt-20 mo:mt-40 text-[#403227] title text-md mo:text-2xl my-auto text-center">
           The story of a little dugong, MIRAE
         </div>
         <Leaf />
-        <div className="reveal bg-center bg-[length:110%_110%] bg-[url('/mirae/background.png')] opacity-0 scale-110 mx-auto h-96 w-96 z-10 translate-y-60 items-center flex-col relative flex justify-center trnaslate-y-1/2">
-          <Image
-            className="absolute translate-y-1"
-            src="/mirae/body.png"
-            width={440}
-            height={440}
-            alt="mirae-body"
-          />
-          <Image
-            className="fin-1 absolute left-40 origin-top-left"
-            src="/mirae/fin-1.svg"
-            width={70}
-            height={70}
-            alt="fin-1"
-          />
-          <Image
-            className="fin-2 absolute -z-10 left-[13.5rem] top-40 origin-top"
-            src="/mirae/fin-2.svg"
-            width={36}
-            height={36}
-            alt="fin-2"
-          />
-          <Image
-            className="fin-3 absolute -z-20 left-60 top-36 origin-top"
-            src="/mirae/fin-3.svg"
-            width={48}
-            height={48}
-            alt="fin-3"
-          />
+        <div className="w-full flex  justify-center items-center">
+          <div className="reveal bg-center bg-[length:110%_110%] bg-[url('/mirae/background.png')] opacity-0 scale-90 mo:scale-110 mx-auto h-96 w-96 z-10 items-center flex-col relative flex justify-center">
+            <Image
+              className="absolute translate-y-1"
+              src="/mirae/body.png"
+              width={440}
+              height={440}
+              alt="mirae-body"
+            />
+            <Image
+              className="fin-1 absolute left-40 origin-top-left"
+              src="/mirae/fin-1.svg"
+              width={70}
+              height={70}
+              alt="fin-1"
+            />
+            <Image
+              className="fin-2 absolute -z-10 left-[13.5rem] top-40 origin-top"
+              src="/mirae/fin-2.svg"
+              width={36}
+              height={36}
+              alt="fin-2"
+            />
+            <Image
+              className="fin-3 absolute -z-20 left-60 top-36 origin-top"
+              src="/mirae/fin-3.svg"
+              width={48}
+              height={48}
+              alt="fin-3"
+            />
+          </div>
         </div>
+
         {buttonRender && (
-          <div className="absolute bottom-40 flex w-full space-x-8 justify-center items-center">
+          <div className="mo:flex mo:bottom-1/4 absolute bottom-[10vh] flex scale-75 mo:scale-100 mo:flex-row flex-col w-full space-y-2 mo:space-x-8 justify-center items-center">
             <Button nextPage="/scene01" color="g2" text="S T O R Y" />
             <Button nextPage="/field" color="g3" text="M I R A E" />
             <Button nextPage="/mission01" color="g4" text="M I S S I O N" />

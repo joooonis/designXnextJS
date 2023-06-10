@@ -42,7 +42,7 @@ export default function Button({
           }
           router.push(`${nextPage}`);
         }}
-        className={`button z-10 opacity-0 items-center flex-col  ${className}  flex justify-center`}
+        className={`button z-10 w-fit opacity-0 items-center flex  ${className}  flex justify-center`}
       >
         <div className="relative h-16 w-44 cursor-pointer ">
           <Image
@@ -56,7 +56,7 @@ export default function Button({
               translateY: [0, 4, -2, 0],
               transition: { duration: 0.2, ease: 'easeInOut' },
             }}
-            className="flex absolute w-full h-full justify-center items-center text-white"
+            className="flex absolute h-full justify-center items-center text-white"
           >
             {text}
           </motion.div>
@@ -72,7 +72,7 @@ export default function Button({
           }
           router.push(`${nextPage}`);
         }}
-        className={`button z-10 opacity-0 items-center flex-col  ${className}  flex justify-center`}
+        className={`button z-10 w-fit opacity-0 items-center flex-col  ${className}  flex justify-center`}
       >
         <div className="relative h-16 w-44 cursor-pointer ">
           <Image
@@ -102,7 +102,7 @@ export default function Button({
           }
           router.push(`${nextPage}`);
         }}
-        className={`button z-10 opacity-0 items-center flex-col  ${className}  flex justify-center`}
+        className={`button z-10 w-fit opacity-0 items-center flex-col  ${className}  flex justify-center`}
       >
         <div className="relative h-16 w-44 cursor-pointer ">
           <Image
@@ -126,7 +126,7 @@ export default function Button({
     (color === 'brown' && size === 'large' && (
       <div
         onClick={() => router.push(`${nextPage}`)}
-        className={`button z-10 opacity-0 items-center flex-col absolute ${className} w-full flex justify-center`}
+        className={`button z-10 w-fit opacity-0 items-center flex-col absolute ${className} w-full flex justify-center`}
       >
         <div className="relative h-16 w-44 cursor-pointer ">
           <Image
@@ -150,7 +150,7 @@ export default function Button({
     (color === 'brown' && (
       <div
         onClick={() => router.push(`${nextPage}`)}
-        className={`button z-10 opacity-0 items-center flex-col absolute ${className} w-full flex justify-center`}
+        className={`button z-10 w-fit opacity-0 items-center flex-col absolute ${className} w-full flex justify-center`}
       >
         <div className="relative h-16 w-44 cursor-pointer ">
           <Image
@@ -173,7 +173,7 @@ export default function Button({
     )) || (
       <div
         onClick={() => router.push(`${nextPage}`)}
-        className={`button z-10 opacity-0 items-center flex-col  ${className}  flex justify-center`}
+        className={`button z-10 w-fit opacity-0 items-center flex-col  ${className}  flex justify-center`}
       >
         <div className="relative h-16 w-44 cursor-pointer ">
           <Image

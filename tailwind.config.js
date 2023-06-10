@@ -11,6 +11,9 @@ module.exports = {
         PoorStory: ['Poor Story', 'cursive'], // 한글 폰트
         Ubuntu: ['Ubuntu', 'sans-serif'], // 한글 폰트
       },
+      screens: {
+        mo: '576px',
+      },
       animation: {
         bounce1: 'bounce 2s ease-in-out infinite ',
         bounce2: 'bounce 2s 0.5s ease-in-out infinite ',
