@@ -74,13 +74,13 @@ export default function Home() {
 
   return (
     <Layout>
-      <div className="relative overflow-hidden bg-gradient-to-b w-full from-[rgba(255,244,228,1)] to-[rgba(240,246,238,1)] from-10% to-50% flex-col justify-center items-center h-[calc(100vh-2.5rem)] m-5">
+      <div className="relative overflow-hidden bg-gradient-to-b w-full from-[rgba(255,244,228,1)] to-[rgba(240,246,238,1)] from-10% to-50% flex-col justify-center items-center h-screen mo:m-5">
         <div className="w-full font-Ubuntu font-normal mt-20 mo:mt-40 text-[#403227] title text-md mo:text-2xl my-auto text-center">
           The story of a little dugong, MIRAE
         </div>
         <Leaf />
         <div className="w-full flex  justify-center items-center">
-          <div className="reveal bg-center bg-[length:110%_110%] bg-[url('/mirae/background.png')] opacity-0 scale-90 mo:scale-110 mx-auto h-96 w-96 z-10 items-center flex-col relative flex justify-center">
+          <div className="reveal bg-center bg-[length:110%_110%] bg-[url('/mirae/background.png')] opacity-0 scale-75 mo:scale-110 mx-auto h-96 w-96 z-10 items-center flex-col relative flex justify-center">
             <Image
               className="absolute translate-y-1"
               src="/mirae/body.png"
