@@ -9,7 +9,7 @@ export default function Scene() {
   useEffect(() => {
     setTimeout(() => {
       setButtonRender(true);
-    }, 15000);
+    }, 28000);
   }, []);
 
   return (
@@ -29,25 +29,30 @@ export default function Scene() {
           transition={{ duration: 6 }}
           className="background w-full absolute opacity-50"
         ></motion.img>
-        <div className="mx-24 my-12 z-20 space-y-6">
+        <div className="mo:scale-100 scale-75 flex flex-col absolute mo:top-[5%] bottom-[12.5%] mo:my-12 z-10 w-full mx-auto">
           <Chats
             chats={[
               {
                 message:
                   '내가 살던 바다 아래에는 쓰레기가 쌓이고, 놀이터처럼 돌아다니던 해안도 쓰레기로 가득 차버렸어.',
                 isLoading: true,
+                url: '/tts/scene3/01.wav',
               },
               {
                 message:
                   '더는 먹이를 구할 수 없어서 친구들도 하나둘씩 사라지고, 엄마와도 결국 헤어지고야 말았지...',
+                isLoading: true,
+                url: '/tts/scene3/02.wav',
               },
+
               {
                 isLoading: true,
                 message:
                   '이제는 나 혼자 이 바다를 떠돌아다니고 있어. 어떻게 하면 좋을까?',
+                url: '/tts/scene3/03.wav',
               },
             ]}
-            durations={[4, 9, 11]}
+            durations={[4, 14, 22]}
           />
         </div>
         <div className="w-full h-20 z-20 flex justify-center items-center absolute bottom-4">

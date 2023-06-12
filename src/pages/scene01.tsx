@@ -85,7 +85,7 @@ export default function Scene() {
                 url: '/tts/scene1/04.wav',
               },
             ]}
-            durations={[6, 13, 16, 22]}
+            durations={[6, 10, 15, 22]}
           />
         </div>
       </div>
