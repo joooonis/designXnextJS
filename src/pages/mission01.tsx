@@ -20,7 +20,7 @@ export default function Stage() {
           transition={{ duration: 1.5, easings: 'easeInOut' }}
           className=" font-PoorStory text-xl leading-10 text-center"
         >
-          이번주의 미션을 확인 하시겠어요?
+          매주 일상 속에서 환경을 지키는 미션을 수행해요!
         </motion.div>
         <motion.div
           initial={{ opacity: 0 }}

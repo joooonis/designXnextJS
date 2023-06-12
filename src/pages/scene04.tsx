@@ -57,11 +57,11 @@ export default function Scene() {
             durations={[4, 9, 15, 20]}
           />
         </div>
-        <div className="w-full h-20 z-20 flex justify-center items-center absolute bottom-4">
+        <div className="w-full h-20 z-20 flex justify-center items-center absolute bottom-[10%]">
           <div className="relative">
             {buttonRender && (
               <Button
-                nextPage="/scene04"
+                nextPage="/mission"
                 color="brown"
                 text="미래를 만나러 가요"
                 className={`bottom-[160px] font-PoorStory ${

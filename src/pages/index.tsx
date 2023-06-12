@@ -75,12 +75,12 @@ export default function Home() {
   return (
     <Layout>
       <div className="relative overflow-hidden bg-gradient-to-b w-full from-[rgba(255,244,228,1)] to-[rgba(240,246,238,1)] from-10% to-50% flex-col justify-center items-center h-screen">
-        <div className="w-full font-PoorStory font-normal mt-20 mo:mt-40 text-[#403227] title text-md mo:text-2xl my-auto text-center">
+        <div className="w-full font-PoorStory font-normal mt-10 mo:mt-40 text-[#403227] title text-md mo:text-2xl my-auto text-center">
           우리의 미래를 구해줘, MIRAE
         </div>
         <Leaf />
-        <div className="w-full flex  justify-center items-center">
-          <div className="reveal bg-center bg-[length:110%_110%] bg-[url('/mirae/background.png')] opacity-0 scale-75 mo:scale-110 mx-auto h-96 w-96 z-10 items-center flex-col relative flex justify-center">
+        <div className="w-full flex  justify-center items-center mt-10">
+          <div className="reveal bg-center bg-[length:110%_110%] bg-[url('/mirae/background.png')] opacity-0 scale-75 mo:scale-125 mx-auto h-96 w-96 z-10 items-center flex-col relative flex justify-center">
             <Image
               className="absolute translate-y-1"
               src="/mirae/body.png"
@@ -115,8 +115,6 @@ export default function Home() {
         {buttonRender && (
           <div className="mo:flex mo:bottom-1/4 absolute bottom-[10vh] flex scale-90 mo:scale-100 mo:flex-row flex-col w-full space-y-2 mo:space-x-8 justify-center items-center">
             <Button nextPage="/scene01" color="g2" text="S T A R T" />
-            {/* <Button nextPage="/field" color="g3" text="M I R A E" />
-            <Button nextPage="/mission01" color="g4" text="M I S S I O N" /> */}
           </div>
         )}
         <div className="relative" id="snow"></div>

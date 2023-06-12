@@ -89,7 +89,7 @@ export default function Scene() {
           />
         </div>
       </div>
-      <div className="w-full h-20 z-20 flex justify-center items-center absolute bottom-4">
+      <div className="w-full h-20 z-20 flex justify-center items-center absolute bottom-[10%]">
         <div className="relative">
           {buttonRender && (
             <Button

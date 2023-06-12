@@ -150,7 +150,7 @@ export default function Button({
     (color === 'brown' && (
       <div
         onClick={() => router.push(`${nextPage}`)}
-        className={`button z-10 w-fit opacity-0 items-center mo:scale-100 mo:-translate-y-40  flex-col scale-75 ${className} w-full flex justify-center`}
+        className={`button z-10 w-fit opacity-0 items-center mo:scale-100   flex-col scale-75 ${className} w-full flex justify-center`}
       >
         <div className="relative h-16 w-44 cursor-pointer ">
           <Image
