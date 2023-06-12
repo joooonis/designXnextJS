@@ -77,7 +77,7 @@ export default function Stage() {
     }, 8000);
     setTimeout(() => {
       setButtonRender(true);
-    }, 9000);
+    }, 10000);
 
     setTimeout(() => {
       setIsFlipped(true);
@@ -309,9 +309,9 @@ export default function Stage() {
           <div className="relative">
             {buttonRender && (
               <Button
-                nextPage="/mission"
+                nextPage="/field"
                 color="brown"
-                text="미션을 수행해주세요!"
+                text="미션을 수행하러 가요!"
                 className={`bottom-[160px] font-PoorStory ${
                   buttonRender ? 'visible' : 'invisible'
                 }`}
