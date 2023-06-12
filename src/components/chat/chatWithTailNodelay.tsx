@@ -1,17 +1,20 @@
 import { useEffect, useState } from 'react';
 import Wait from './wait';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
+import ReactPlayer from 'react-player';
+
 interface ChatProps {
   duration?: number;
   message?: string;
   isLoading?: boolean;
+  url?: string;
 }
 
 export default function ChatWithTail({
   duration = 0,
   message,
   isLoading = false,
+  url,
 }: ChatProps) {
   const [startChat, setStartChat] = useState(!isLoading);
   useEffect(() => {
@@ -37,6 +40,9 @@ export default function ChatWithTail({
             className="font-PoorStory"
           >
             {message}
+            <div className="hidden">
+              <ReactPlayer url={url} playing />
+            </div>
             <div
               className="w-0 h-0 absolute  -bottom-3 left-4
    border-l-[10px] border-l-transparent

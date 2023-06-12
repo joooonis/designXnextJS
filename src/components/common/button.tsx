@@ -44,19 +44,13 @@ export default function Button({
         }}
         className={`button z-[100] w-fit opacity-0 items-center flex  ${className}  flex justify-center`}
       >
-        <div className="relative h-16 w-44 cursor-pointer ">
-          <Image
-            src={'/button/button-g1.png'}
-            fill
-            alt="button"
-            className="object-contain"
-          ></Image>
+        <div className="relative h-16 w-44 cursor-pointer bg-[url('/button/button-g1.png')] bg-contain bg-no-repeat">
           <motion.div
             whileHover={{
               translateY: [0, 4, -2, 0],
               transition: { duration: 0.2, ease: 'easeInOut' },
             }}
-            className="flex absolute h-full justify-center items-center text-white"
+            className=" flex z-100 h-full justify-center text-center items-center text-white"
           >
             {text}
           </motion.div>
