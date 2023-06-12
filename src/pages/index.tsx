@@ -113,7 +113,7 @@ export default function Home() {
         </div>
 
         {buttonRender && (
-          <div className="mo:flex mo:bottom-1/4 absolute bottom-[10vh] flex scale-75 mo:scale-100 mo:flex-row flex-col w-full space-y-2 mo:space-x-8 justify-center items-center">
+          <div className="mo:flex mo:bottom-1/4 absolute bottom-[10vh] flex scale-90 mo:scale-100 mo:flex-row flex-col w-full space-y-2 mo:space-x-8 justify-center items-center">
             <Button nextPage="/scene01" color="g2" text="S T O R Y" />
             <Button nextPage="/field" color="g3" text="M I R A E" />
             <Button nextPage="/mission01" color="g4" text="M I S S I O N" />

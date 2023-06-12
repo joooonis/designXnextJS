@@ -38,7 +38,7 @@ export default function Scene() {
   useEffect(() => {
     setTimeout(() => {
       setButtonRender(true);
-    }, 190000);
+    }, 19000);
   }, []);
 
   return (
@@ -52,7 +52,7 @@ export default function Scene() {
           initial={{ opacity: 0 }}
           animate={{ opacity: [0, 1] }}
           transition={{ duration: 4, delay: 2 }}
-          className="mirae mo:w-full mo:h-full top-24 mo:top-0 scale-90 mo:scale-100 rounded-md absolute z-10 opacity-50"
+          className="  scale-90 mo:w-full mo:h-full  top-24 mo:top-0 mo:scale-100 rounded-md absolute z-10 opacity-50"
         ></motion.img>
         <motion.img
           src="/scene01/bg.png"
