@@ -14,7 +14,7 @@ export default function Scene() {
 
   return (
     <Layout>
-      <div className="relative w-full overflow-hidden flex-col justify-center items-center h-[calc(100vh-2.5rem)] m-5">
+      <div className="relative h-screen w-full overflow-hidden flex-col justify-center items-center">
         <motion.img
           src="/scene03/mm.png"
           initial={{ opacity: 0 }}
@@ -50,14 +50,20 @@ export default function Scene() {
             durations={[4, 9, 11]}
           />
         </div>
-        <Button
-          nextPage="/scene04"
-          text="다음"
-          color="brown"
-          className={`bottom-[160px] font-PoorStory ${
-            buttonRender ? 'visible' : 'invisible'
-          }`}
-        />
+        <div className="w-full h-20 z-20 flex justify-center items-center absolute bottom-4">
+          <div className="relative">
+            {buttonRender && (
+              <Button
+                nextPage="/scene04"
+                color="brown"
+                text="다음"
+                className={`bottom-[160px] font-PoorStory ${
+                  buttonRender ? 'visible' : 'invisible'
+                }`}
+              />
+            )}
+          </div>
+        </div>
       </div>
     </Layout>
   );

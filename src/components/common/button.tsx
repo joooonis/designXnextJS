@@ -42,7 +42,7 @@ export default function Button({
           }
           router.push(`${nextPage}`);
         }}
-        className={`button z-10 w-fit opacity-0 items-center flex  ${className}  flex justify-center`}
+        className={`button z-[100] w-fit opacity-0 items-center flex  ${className}  flex justify-center`}
       >
         <div className="relative h-16 w-44 cursor-pointer ">
           <Image

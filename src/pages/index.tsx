@@ -74,9 +74,9 @@ export default function Home() {
 
   return (
     <Layout>
-      <div className="relative overflow-hidden bg-gradient-to-b w-full from-[rgba(255,244,228,1)] to-[rgba(240,246,238,1)] from-10% to-50% flex-col justify-center items-center h-screen mo:m-5">
-        <div className="w-full font-Ubuntu font-normal mt-20 mo:mt-40 text-[#403227] title text-md mo:text-2xl my-auto text-center">
-          The story of a little dugong, MIRAE
+      <div className="relative overflow-hidden bg-gradient-to-b w-full from-[rgba(255,244,228,1)] to-[rgba(240,246,238,1)] from-10% to-50% flex-col justify-center items-center h-screen">
+        <div className="w-full font-PoorStory font-normal mt-20 mo:mt-40 text-[#403227] title text-md mo:text-2xl my-auto text-center">
+          우리의 미래를 구해줘, MIRAE
         </div>
         <Leaf />
         <div className="w-full flex  justify-center items-center">
@@ -114,9 +114,9 @@ export default function Home() {
 
         {buttonRender && (
           <div className="mo:flex mo:bottom-1/4 absolute bottom-[10vh] flex scale-90 mo:scale-100 mo:flex-row flex-col w-full space-y-2 mo:space-x-8 justify-center items-center">
-            <Button nextPage="/scene01" color="g2" text="S T O R Y" />
-            <Button nextPage="/field" color="g3" text="M I R A E" />
-            <Button nextPage="/mission01" color="g4" text="M I S S I O N" />
+            <Button nextPage="/scene01" color="g2" text="S T A R T" />
+            {/* <Button nextPage="/field" color="g3" text="M I R A E" />
+            <Button nextPage="/mission01" color="g4" text="M I S S I O N" /> */}
           </div>
         )}
         <div className="relative" id="snow"></div>
