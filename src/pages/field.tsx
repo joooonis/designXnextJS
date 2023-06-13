@@ -47,14 +47,21 @@ export default function Field() {
   }, []);
 
   useEffect(() => {
+    if (fieldNumber === 1) {
+      setButtonRender2(false);
+
+      setTimeout(() => {
+        setFieldNumber(2);
+      }, 10000);
+    }
+
     if (fieldNumber !== -1) return;
     setTimeout(() => {
       setButtonRender2(true);
-    }, 3000);
+    }, 5000);
   }, [fieldNumber]);
 
-  console.log(fieldNumber, buttonRender2);
-
+  console.log(fieldNumber);
   return (
     <Layout>
       <div className="relative h-screen bg-gradient-to-b w-full flex-col py-16 items-center justify-between  from-[rgba(255,244,228,1)] to-[rgba(240,246,238,1)] from-10% to-50% overflow-hidden ">
@@ -62,7 +69,7 @@ export default function Field() {
         <div className="flex flex-col justify-center items-center">
           <div className="relative">
             <div className="w-full absolute bottom-0 ">
-              <div className="translate-x-[520px] translate-y-20">
+              <div className={`translate-x-[500px] translate-y-20 transition`}>
                 <Mirae />
                 {fieldNumber === 0 && (
                   <div className="absolute -top-10 left-1/2">
@@ -94,7 +101,7 @@ export default function Field() {
                     />
                   </div>
                 )}
-                {fieldNumber === 3 && (
+                {fieldNumber === 2 && (
                   <div className="absolute -top-10 left-1/2">
                     <ChatWithTail
                       duration={1}
@@ -112,7 +119,7 @@ export default function Field() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: [0, 1] }}
                 transition={{ duration: 1 }}
-                className="rounded-xl shadow-lg ml-16 max-w-[1440px]"
+                className="rounded-xl shadow-lg max-w-[1440px]"
               ></motion.img>
             )}
             {fieldNumber === -1 && (
@@ -121,7 +128,7 @@ export default function Field() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: [0, 1] }}
                 transition={{ duration: 1 }}
-                className="rounded-xl shadow-lg ml-16 max-w-[1440px]"
+                className="rounded-xl shadow-lg max-w-[1440px]"
               ></motion.img>
             )}
             {fieldNumber === 1 && (
@@ -129,21 +136,24 @@ export default function Field() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: [0, 1] }}
                 transition={{ duration: 1 }}
-                className="rounded-xl shadow-lg ml-16 w-[1440px] max-w-[1440px]"
+                className="rounded-xl shadow-lg overflow-hidden w-[1440px]"
               >
-                <video autoPlay controls className="object-cover">
+                <video autoPlay className="w-full ">
                   <source src="/videos/03.mp4" type="video/mp4" />
                 </video>
               </motion.div>
             )}
             {fieldNumber === 2 && (
-              <motion.img
-                src="/field/mirae-happy.png"
+              <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: [0, 1] }}
                 transition={{ duration: 1 }}
-                className="rounded-xl shadow-lg ml-16 max-w-[1440px]"
-              ></motion.img>
+                className="rounded-xl shadow-lg overflow-hidden w-[1440px]"
+              >
+                <video autoPlay loop className="w-full ">
+                  <source src="/videos/02.mp4" type="video/mp4" />
+                </video>
+              </motion.div>
             )}
           </div>
           {animation[0] && (
@@ -179,11 +189,21 @@ export default function Field() {
           {fieldNumber === 1 && (
             <motion.div
               initial={{ opacity: 0 }}
-              animate={{ opacity: [0, 1, 0, 1] }}
+              animate={{ opacity: [0, 1, 0, 1, 1, 1, 0, 1, 0, 1] }}
               transition={{ duration: 1.5, easings: 'easeInOut' }}
               className=" font-PoorStory mt-8 text-xl mb-20 leading-10 text-center "
             >
               스마트 AI 쓰레기통을 사용해서 분리수거를 하는 중이에요
+            </motion.div>
+          )}
+          {fieldNumber === 2 && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: [0, 1, 0, 1, 1, 1, 0, 1, 0, 1] }}
+              transition={{ duration: 1.5, easings: 'easeInOut' }}
+              className=" font-PoorStory mt-8 text-xl mb-20 leading-10 text-center "
+            >
+              미래가 기뻐하고 있어요 다음에도 미션을 잘 수행해주세요.
             </motion.div>
           )}
         </div>
@@ -209,6 +229,7 @@ export default function Field() {
                   text="네"
                   onClick={() => {
                     setFieldNumber((prev) => prev + 1);
+                    setAnimation([false, false, true]);
                     setButtonRender(false);
                   }}
                   className="bottom-[160px] font-PoorStory"
@@ -220,6 +241,20 @@ export default function Field() {
                 <Button
                   color="g1"
                   text="네"
+                  onClick={() => {
+                    setFieldNumber(1);
+
+                    setButtonRender2(false);
+                  }}
+                  className="bottom-[160px] font-PoorStory"
+                />
+              </div>
+            )}
+            {fieldNumber === 2 && (
+              <div className="flex justify-center space-x-24 relative">
+                <Button
+                  color="g1"
+                  text="돌아가기"
                   onClick={() => {
                     setFieldNumber(1);
 
