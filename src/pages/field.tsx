@@ -123,13 +123,16 @@ export default function Field() {
               ></motion.img>
             )}
             {fieldNumber === -1 && (
-              <motion.img
-                src="/field/mirae-sad.png"
+              <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: [0, 1] }}
                 transition={{ duration: 1 }}
-                className="rounded-xl shadow-lg max-w-[1440px]"
-              ></motion.img>
+                className="rounded-xl shadow-lg overflow-hidden w-[1440px]"
+              >
+                <video autoPlay className="w-full ">
+                  <source src="/videos/sad.mp4" type="video/mp4" />
+                </video>
+              </motion.div>
             )}
             {fieldNumber === 1 && (
               <motion.div

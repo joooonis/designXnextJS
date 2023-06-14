@@ -8,10 +8,17 @@ export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const audioRef = useRef<HTMLAudioElement>(null);
 
+  useEffect(() => {
+    console.log(audioRef.current);
+    if (!audioRef.current) return;
+    audioRef.current.play();
+  }, [audioRef]);
+
   return (
     <div className="mx-auto w-full cursor-circle hover:cursor-[url('/asset/hover.png') 8 8]">
       <AnimatePresence mode="sync">
-        <audio src="/audio/bgm1.mp3" autoPlay ref={audioRef} loop></audio>
+        <audio src="/audio/bgm1.mp3" autoPlay ref={audioRef}></audio>
+
         <Component {...pageProps} key={router.route} />
       </AnimatePresence>
     </div>
