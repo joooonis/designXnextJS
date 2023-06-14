@@ -2,7 +2,7 @@ import anime from 'animejs';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 interface ButtonProps {
   nextPage?: string;
@@ -31,6 +31,12 @@ export default function Button({
       duration: 500,
     });
   }, []);
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  const playBGM = () => {
+    if (!audioRef.current) return;
+    audioRef.current.play();
+  };
 
   return (
     (color === 'g1' && (
@@ -143,9 +149,13 @@ export default function Button({
     )) ||
     (color === 'brown' && (
       <div
-        onClick={() => router.push(`${nextPage}`)}
+        onClick={() => {
+          playBGM();
+          router.push(`${nextPage}`);
+        }}
         className={`button z-10 w-fit opacity-0 items-center mo:scale-100   flex-col scale-75 ${className} w-full flex justify-center`}
       >
+        <audio src="/audio/transition.wav" ref={audioRef}></audio>
         <div className="relative h-16 w-44 cursor-pointer ">
           <Image
             src={'/button/button-brown.png'}

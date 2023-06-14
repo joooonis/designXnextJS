@@ -1,13 +1,15 @@
 import Layout from '@components/common/layout';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Button from '@components/common/button';
 import Chats from '@components/chat/chats';
 import { motion } from 'framer-motion';
 import anime from 'animejs';
+import { useRouter } from 'next/router';
 
 export default function Scene() {
   const [buttonRender, setButtonRender] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
     const textWrapper = document.querySelector('.title');
@@ -42,8 +44,18 @@ export default function Scene() {
     }, 28000);
   }, []);
 
+  const router = useRouter();
+
+  const playBGM = () => {
+    if (!audioRef.current) return;
+    audioRef.current.play().then(() => {
+      router.push('/scene02');
+    });
+  };
+
   return (
     <Layout>
+      <audio src="/audio/transition.wav" ref={audioRef}></audio>
       <div className="relative h-screen w-full overflow-hidden flex-col justify-center items-center">
         <motion.img
           src="/scene01/mirae.png"

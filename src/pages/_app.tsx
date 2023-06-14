@@ -1,15 +1,17 @@
 import type { AppProps } from 'next/app';
 import '../styles/globals.css';
-import store from '../features/store';
-import { persistStore } from 'redux-persist';
 import { AnimatePresence } from 'framer-motion';
+import { useRouter } from 'next/router';
+import { useEffect, useRef, useState } from 'react';
 
-const persistor = persistStore(store);
+export default function App({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+  const audioRef = useRef<HTMLAudioElement>(null);
 
-export default function App({ Component, pageProps, router }: AppProps) {
   return (
-    <div className="mx-auto w-full ">
+    <div className="mx-auto w-full cursor-circle hover:cursor-[url('/asset/hover.png') 8 8]">
       <AnimatePresence mode="sync">
+        <audio src="/audio/bgm1.mp3" autoPlay ref={audioRef} loop></audio>
         <Component {...pageProps} key={router.route} />
       </AnimatePresence>
     </div>

@@ -19,6 +19,9 @@ module.exports = {
         bounce2: 'bounce 2s 0.5s ease-in-out infinite ',
         bounce3: 'bounce 2s 1s ease-in-out infinite ',
       },
+      cursor: {
+        circle: "url('/asset/circle.png') 4 4, auto",
+      },
       keyframes: {
         bounce: {
           '0%, 20%': { trasnsform: `translate(0,0)` },

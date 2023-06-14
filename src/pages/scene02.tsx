@@ -1,8 +1,9 @@
 import Layout from '@components/common/layout';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Button from '@components/common/button';
 import Chats from '@components/chat/chats';
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/router';
 export default function Scene() {
   const [buttonRender, setButtonRender] = useState(false);
 
