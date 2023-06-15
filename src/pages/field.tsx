@@ -217,6 +217,16 @@ export default function Field() {
               <div className="flex space-x-24 relative">
                 <Button
                   color="g1"
+                  text="네"
+                  onClick={() => {
+                    setFieldNumber((prev) => prev + 1);
+                    setAnimation([false, false, true]);
+                    setButtonRender(false);
+                  }}
+                  className="bottom-[160px] font-PoorStory"
+                />
+                <Button
+                  color="g1"
                   text="아니요"
                   onClick={() => {
                     setFieldNumber(-1);
@@ -227,16 +237,6 @@ export default function Field() {
                   className={`bottom-[160px] font-PoorStory ${
                     buttonRender ? 'visible' : 'invisible'
                   }`}
-                />
-                <Button
-                  color="g1"
-                  text="네"
-                  onClick={() => {
-                    setFieldNumber((prev) => prev + 1);
-                    setAnimation([false, false, true]);
-                    setButtonRender(false);
-                  }}
-                  className="bottom-[160px] font-PoorStory"
                 />
               </div>
             )}
