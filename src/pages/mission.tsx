@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Leaf from '@components/leaf/leaf';
 import Button from '@components/common/button';
+import Chats from '@components/chat/chats';
 
 export default function Stage() {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -28,21 +29,21 @@ export default function Stage() {
         temp[1] = true;
         return temp;
       });
-    }, 1000);
+    }, 2000);
     setTimeout(() => {
       setAnimation((prev) => {
         const temp = [...prev];
         temp[2] = true;
         return temp;
       });
-    }, 2000);
+    }, 3000);
     setTimeout(() => {
       setAnimation((prev) => {
         const temp = [...prev];
         temp[3] = true;
         return temp;
       });
-    }, 3000);
+    }, 4000);
     setTimeout(() => {
       setAnimation((prev) => {
         const temp = [...prev];
@@ -67,17 +68,17 @@ export default function Stage() {
         temp[6] = true;
         return temp;
       });
-    }, 7000);
+    }, 8000);
     setTimeout(() => {
       setAnimation((prev) => {
         const temp = [...prev];
         temp[7] = true;
         return temp;
       });
-    }, 8000);
+    }, 10000);
     setTimeout(() => {
       setButtonRender(true);
-    }, 10000);
+    }, 12000);
 
     setTimeout(() => {
       setIsFlipped(true);
@@ -86,14 +87,14 @@ export default function Stage() {
 
   return (
     <Layout>
-      <div className="relative  overflow-hidden space-y-24 bg-gradient-to-b w-full justify-center items-center from-[rgba(255,244,228,1)] to-[rgba(240,246,238,1)] from-7% to-70% flex h-[calc(100vh-2.5rem)] m-5">
+      <div className="relative  overflow-hidden space-y-24 bg-gradient-to-b w-full justify-center items-center h-screen from-[rgba(255,244,228,1)] to-[rgba(240,246,238,1)] from-7% to-70% flex ">
         <Leaf />
         <div className="w-full -translate-y-20">
           {!isFlipped && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: [0, 1, 0, 1] }}
-              transition={{ duration: 1.5, easings: 'easeInOut' }}
+              transition={{ duration: 4, easings: 'easeInOut', delay: 1 }}
               className=" font-PoorStory text-lg mb-20 leading-10 text-center "
             >
               매주 실생활에서 실천할 수 있는 환경 미션이 주어질 거에요.
@@ -102,8 +103,13 @@ export default function Stage() {
           {isFlipped && (
             <motion.div
               initial={{ opacity: 0 }}
-              animate={{ opacity: [0, 1, 0, 1] }}
-              transition={{ duration: 1.5, easings: 'easeInOut' }}
+              animate={{ opacity: [0, 1, 0, 1, 0, 1, 0, 1, 0, 1] }}
+              transition={{
+                duration: 7,
+                easings: 'easeInOut',
+                loop: Infinity,
+                repeatDelay: 2,
+              }}
               className=" font-PoorStory text-lg mb-20 leading-10 text-center "
             >
               미션을 잘 수행하면 미래가 살아가는 미래가 밝아지고, 잘 수행하지
@@ -112,12 +118,28 @@ export default function Stage() {
             </motion.div>
           )}
           <div className="flex justify-center  items-center">
-            <div className=" w-[1076px]">
-              {' '}
+            <div className="hidden">
+              <Chats
+                chats={[
+                  {
+                    message: '안녕하세요',
+                    isLoading: true,
+                    url: '/tts/mission/01.mp3',
+                  },
+                  {
+                    message: '안녕하세요',
+                    isLoading: true,
+                    url: '/tts/mission/02.mp3',
+                  },
+                ]}
+                durations={[0, 3]}
+              />
+            </div>
+            <div className="">
               <div className="flex space-x-8">
                 {animation[0] && (
                   <div
-                    className={`relative w-60 rounded-xl cursor-pointer flex justify-center items-center aspect-[2/3] overflow-hidden`}
+                    className={`relative w-72 rounded-xl cursor-pointer flex justify-center items-center aspect-[2/3] overflow-hidden`}
                   >
                     {
                       <motion.div
@@ -140,7 +162,7 @@ export default function Stage() {
                 )}
                 {animation[1] && (
                   <div
-                    className={`relative w-60 rounded-xl cursor-pointer flex justify-center items-center aspect-[2/3] overflow-hidden`}
+                    className={`relative w-72 rounded-xl cursor-pointer flex justify-center items-center aspect-[2/3] overflow-hidden`}
                   >
                     {
                       <motion.div
@@ -163,7 +185,7 @@ export default function Stage() {
                 )}
                 {animation[2] && (
                   <div
-                    className={`relative w-60 rounded-xl cursor-pointer flex justify-center items-center aspect-[2/3] overflow-hidden`}
+                    className={`relative w-72 rounded-xl cursor-pointer flex justify-center items-center aspect-[2/3] overflow-hidden`}
                   >
                     {
                       <motion.div
@@ -186,7 +208,7 @@ export default function Stage() {
                 )}
                 {animation[3] && (
                   <div
-                    className={`relative w-60 rounded-xl cursor-pointer flex justify-center items-center aspect-[2/3] overflow-hidden`}
+                    className={`relative w-72 rounded-xl cursor-pointer flex justify-center items-center aspect-[2/3] overflow-hidden`}
                   >
                     {
                       <motion.div
@@ -211,7 +233,7 @@ export default function Stage() {
               <div className="flex space-x-8">
                 {animation[4] && (
                   <div
-                    className={`relative w-60 rounded-xl cursor-pointer flex justify-center items-center aspect-[2/3] overflow-hidden`}
+                    className={`relative w-72 rounded-xl cursor-pointer flex justify-center items-center aspect-[2/3] overflow-hidden`}
                   >
                     {
                       <motion.div
@@ -234,7 +256,7 @@ export default function Stage() {
                 )}
                 {animation[5] && (
                   <div
-                    className={`relative w-60 rounded-xl cursor-pointer flex justify-center items-center aspect-[2/3] overflow-hidden`}
+                    className={`relative w-72 rounded-xl cursor-pointer flex justify-center items-center aspect-[2/3] overflow-hidden`}
                   >
                     {
                       <motion.div
@@ -257,7 +279,7 @@ export default function Stage() {
                 )}
                 {animation[6] && (
                   <div
-                    className={`relative w-60 rounded-xl cursor-pointer flex justify-center items-center aspect-[2/3] overflow-hidden`}
+                    className={`relative w-72 rounded-xl cursor-pointer flex justify-center items-center aspect-[2/3] overflow-hidden`}
                   >
                     {
                       <motion.div
@@ -280,7 +302,7 @@ export default function Stage() {
                 )}
                 {animation[7] && (
                   <div
-                    className={`relative w-60 rounded-xl cursor-pointer flex justify-center items-center aspect-[2/3] overflow-hidden`}
+                    className={`relative w-72 rounded-xl cursor-pointer flex justify-center items-center aspect-[2/3] overflow-hidden`}
                   >
                     {
                       <motion.div
