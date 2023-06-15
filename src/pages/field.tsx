@@ -119,7 +119,7 @@ export default function Field() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: [0, 1] }}
                 transition={{ duration: 1 }}
-                className="rounded-xl shadow-lg max-w-[1020px]"
+                className="rounded-xl shadow-lg max-w-[1200px]"
               ></motion.img>
             )}
             {fieldNumber === -1 && (
@@ -127,7 +127,7 @@ export default function Field() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: [0, 1] }}
                 transition={{ duration: 1 }}
-                className="rounded-xl shadow-lg overflow-hidden w-[1020px]"
+                className="rounded-xl shadow-lg overflow-hidden w-[1200px]"
               >
                 <video autoPlay className="w-full ">
                   <source src="/videos/sad.mp4" type="video/mp4" />
@@ -139,7 +139,7 @@ export default function Field() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: [0, 1] }}
                 transition={{ duration: 1 }}
-                className="rounded-xl shadow-lg overflow-hidden w-[1020px]"
+                className="rounded-xl shadow-lg overflow-hidden w-[1200px]"
               >
                 <video autoPlay className="w-full ">
                   <source src="/videos/03.mp4" type="video/mp4" />

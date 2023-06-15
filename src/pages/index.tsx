@@ -75,7 +75,7 @@ export default function Home() {
   return (
     <Layout>
       <div className="relative overflow-hidden bg-gradient-to-b w-full from-[rgba(255,244,228,1)] to-[rgba(240,246,238,1)] from-10% to-50% flex-col justify-center items-center h-screen">
-        <div className="w-full font-PoorStory font-normal mt-10 mo:mt-40 text-[#403227] title text-md mo:text-2xl my-auto text-center">
+        <div className="w-full font-PoorStory font-normal mt-10 mo:mt-60 text-[#403227] title text-md mo:text-2xl my-auto text-center">
           우리의 미래를 구해줘, MIRAE
         </div>
         <Leaf />
