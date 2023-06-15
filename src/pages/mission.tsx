@@ -94,7 +94,7 @@ export default function Stage() {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: [0, 1, 0, 1] }}
-              transition={{ duration: 4, easings: 'easeInOut', delay: 1 }}
+              transition={{ duration: 4, easings: 'easeInOut', delay: 0.2 }}
               className=" font-PoorStory text-lg mb-20 leading-10 text-center "
             >
               매주 실생활에서 실천할 수 있는 환경 미션이 주어질 거에요.
@@ -123,7 +123,7 @@ export default function Stage() {
                 chats={[
                   {
                     message: '안녕하세요',
-                    isLoading: true,
+                    isLoading: false,
                     url: '/tts/mission/01.mp3',
                   },
                   {
