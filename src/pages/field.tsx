@@ -5,6 +5,7 @@ import Leaf from '@components/leaf/leaf';
 import ChatWithTail from '@components/chat/chatWithTailNodelay';
 import Mirae from '@components/mirae/mirae';
 import Button from '@components/common/button';
+import { useRouter } from 'next/router';
 
 export default function Field() {
   const [fieldNumber, setFieldNumber] = useState(0);
@@ -23,7 +24,7 @@ export default function Field() {
   ]);
   const [buttonRender, setButtonRender] = useState(false);
   const [buttonRender2, setButtonRender2] = useState(false);
-
+  const router = useRouter();
   useEffect(() => {
     setTimeout(() => {
       setAnimation((prev) => {
@@ -259,9 +260,7 @@ export default function Field() {
                   color="g1"
                   text="돌아가기"
                   onClick={() => {
-                    setFieldNumber(1);
-
-                    setButtonRender2(false);
+                    router.push('/');
                   }}
                   className="bottom-[160px] font-PoorStory"
                 />

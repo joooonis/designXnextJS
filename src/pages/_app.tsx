@@ -17,6 +17,11 @@ export default function App({ Component, pageProps }: AppProps) {
       if (!audioRef.current?.paused) audioRef.current?.pause();
       bgm2Ref.current?.play();
     }
+    if (router.route === '/') {
+      console.log('home');
+      if (!bgm2Ref.current?.paused) bgm2Ref.current?.pause();
+      audioRef.current?.play();
+    }
   }, [router.route]);
 
   const [isPlaying, setIsPlaying] = useState(false);

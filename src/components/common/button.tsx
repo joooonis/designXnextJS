@@ -43,9 +43,11 @@ export default function Button({
       <div
         onClick={() => {
           if (onClick) {
+            playBGM();
             onClick();
             return;
           }
+          playBGM();
           router.push(`${nextPage}`);
         }}
         className={`button z-[100] w-fit opacity-0 items-center flex  ${className}  flex justify-center`}
@@ -125,7 +127,10 @@ export default function Button({
     )) ||
     (color === 'brown' && size === 'large' && (
       <div
-        onClick={() => router.push(`${nextPage}`)}
+        onClick={() => {
+          playBGM();
+          router.push(`${nextPage}`);
+        }}
         className={`button z-10 w-fit opacity-0 items-center flex-col absolute ${className} w-full flex justify-center`}
       >
         <div className="relative h-16 w-44 cursor-pointer ">
