@@ -69,11 +69,11 @@ export default function Field() {
         <Leaf />
         <div className="flex flex-col justify-center items-center">
           <div className="relative">
-            <div className="w-full absolute bottom-0 ">
-              <div className={`translate-x-[500px] translate-y-20 transition`}>
+            <div className=" absolute bottom-0 right-16">
+              <div className={`translate-y-20 transition`}>
                 <Mirae />
                 {fieldNumber === 0 && (
-                  <div className="absolute -top-10 left-1/2">
+                  <div className="absolute -top-5 left-1/2">
                     <ChatWithTail
                       duration={3}
                       message="내가 어디에 있을까?"
@@ -83,7 +83,7 @@ export default function Field() {
                   </div>
                 )}
                 {fieldNumber === -1 && (
-                  <div className="absolute -top-10 left-1/2">
+                  <div className="absolute -top-5 left-1/2">
                     <ChatWithTail
                       duration={1}
                       message="기분이 별로야... 어서 오늘의 환경 미션을 수행해줘."
@@ -93,7 +93,7 @@ export default function Field() {
                   </div>
                 )}
                 {fieldNumber === 1 && (
-                  <div className="absolute -top-10 left-1/2">
+                  <div className="absolute -top-5 left-1/2">
                     <ChatWithTail
                       duration={1}
                       message="오늘은 분리수거 하는 날이야!"
@@ -103,7 +103,7 @@ export default function Field() {
                   </div>
                 )}
                 {fieldNumber === 2 && (
-                  <div className="absolute -top-10 left-1/2">
+                  <div className="absolute -top-5 left-1/2">
                     <ChatWithTail
                       duration={1}
                       message="우아 덕분에 방이 깨끗해졌어. 다음에도 미션을 잘 수행해줘!"
@@ -120,7 +120,7 @@ export default function Field() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: [0, 1] }}
                 transition={{ duration: 1 }}
-                className="rounded-xl shadow-lg max-w-[1200px]"
+                className="rounded-xl shadow-lg max-w-[80VW]"
               ></motion.img>
             )}
             {fieldNumber === -1 && (
@@ -128,7 +128,7 @@ export default function Field() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: [0, 1] }}
                 transition={{ duration: 1 }}
-                className="rounded-xl shadow-lg overflow-hidden w-[1200px]"
+                className="rounded-xl shadow-lg overflow-hidden w-[80VW]"
               >
                 <video autoPlay className="w-full ">
                   <source src="/videos/sad.mp4" type="video/mp4" />
@@ -140,7 +140,7 @@ export default function Field() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: [0, 1] }}
                 transition={{ duration: 1 }}
-                className="rounded-xl shadow-lg overflow-hidden w-[1200px]"
+                className="rounded-xl shadow-lg overflow-hidden w-[80VW]"
               >
                 <video autoPlay className="w-full ">
                   <source src="/videos/03.mp4" type="video/mp4" />
@@ -152,7 +152,7 @@ export default function Field() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: [0, 1] }}
                 transition={{ duration: 1 }}
-                className="rounded-xl shadow-lg overflow-hidden w-[1020px]"
+                className="rounded-xl shadow-lg overflow-hidden w-[80VW]"
               >
                 <video autoPlay loop className="w-full ">
                   <source src="/videos/02.mp4" type="video/mp4" />

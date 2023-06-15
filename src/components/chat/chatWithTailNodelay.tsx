@@ -31,7 +31,7 @@ export default function ChatWithTail({
       transition={{ ease: 'easeOut', delay: duration }}
       className="w-full flex space-x-4 'justify-start"
     >
-      <div className="rounded-full text-slate-600 z-30 w-fit flex justify-center relative items-center px-8 py-2 bg-gray-100 h-16">
+      <div className="rounded-full text-slate-600 z-30 w-fit flex justify-center relative items-center px-8 py-4 bg-gray-100 ">
         {startChat ? (
           <motion.div
             initial={{ opacity: 0 }}
@@ -43,24 +43,10 @@ export default function ChatWithTail({
             <div className="hidden">
               <ReactPlayer url={url} playing />
             </div>
-            <div
-              className="w-0 h-0 absolute  -bottom-3 left-4
-   border-l-[10px] border-l-transparent
-   border-t-[15px] border-t-gray-100
-   border-r-[10px] border-r-transparent
-    "
-            ></div>
           </motion.div>
         ) : (
           <>
             <Wait />
-            <div
-              className="w-0 h-0 absolute  -bottom-3 left-4
-border-l-[10px] border-l-transparent
-border-t-[15px] border-t-gray-100
-border-r-[10px] border-r-transparent
-"
-            ></div>
           </>
         )}
       </div>
